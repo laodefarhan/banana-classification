@@ -1,0 +1,23 @@
+# ===============================
+# LIBRARY PYTHON YANG DIGUNAKAN DALAM PROJECT
+# KLASIFIKASI TINGKAT KEMATANGAN BUAH PISANG
+# ===============================
+
+# Fungsi Utama : Manajemen file dan direktori
+os
+
+# Fungsi Utama : Pengolahan gambar citra RGB
+opencv-python==4.12.10
+
+# Fungsi Utama : Operasi numerik dan array
+numpy==2.2.6
+
+# Encoding label dan evaluasi
+scikit-learn==1.5.2
+
+# Fungsi Utama : Pelatihan dan prediksi Object Detection / Image Classification
+# Menggantikan tensorflow keras
+ultralytics
+
+# Fungsi Utama : Aplikasi web klasifikasi tingkat kematangan buah pisang
+flask==3.1.2
