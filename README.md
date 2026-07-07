@@ -273,7 +273,7 @@ YOLOv8 Detection
 
 Teknik Informatika
 
-Universitas Muhammadiyah Bangka Belitung
+Universitas Borobudur Jakarta
 
 ---
 
