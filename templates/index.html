@@ -11,9 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/beranda.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
 </head>
 
-<body>
+<body id="beranda">
 
     <!-- ── Ambient Background ── -->
     <div class="ambient">
@@ -22,123 +25,11 @@
         <div class="orb orb-3"></div>
     </div>
 
-    <div class="wrapper">
+    {% include 'navbar.html' %}
 
-        <!-- ── Navbar ── -->
-        <nav class="navbar">
-            <div class="brand-icon">🍌</div>
-            <div class="brand-name">Banana<span>AI</span></div>
-            <div class="badge-model">YOLOv8s-cls</div>
-        </nav>
+    {% include 'beranda.html' %}
 
-        <!-- ── MAIN CARD (Render content conditionally based on state) ── -->
-        <div class="card">
-
-            {% if prediction %}
-
-            <!-- ═══════════════════════════════════
-                     STATE 2: HASIL ANALISIS
-                ═══════════════════════════════════ -->
-            <div class="result-section">
-                <div class="result-section-title">✦ Hasil Analisis</div>
-
-                <!-- Gambar yang diklasifikasi -->
-                <div class="result-image-wrap">
-                    <img src="{{ url_for('uploaded_file', filename=image_path.split('/')[-1].split('\\')[-1]) }}"
-                        alt="Gambar dianalisis" class="result-image">
-                </div>
-
-                <!-- Pill utama -->
-                {% set raw_top = all_probs[0].raw_label if all_probs else '' %}
-                <div class="result-pill {{ raw_top }}">
-                    <div class="result-pill-icon">
-                        {% if raw_top == 'matang' %}🍌
-                        {% elif raw_top == 'mentah' %}🌿
-                        {% elif raw_top == 'setengah_matang' %}🍃
-                        {% elif raw_top == 'error' %}❌
-                        {% else %}🍌{% endif %}
-                    </div>
-                    <div class="result-pill-info">
-                        <div class="result-pill-label">Kelas Terdeteksi</div>
-                        <div class="result-pill-name">{{ prediction }}</div>
-                    </div>
-                    <div class="result-conf-chip">{{ confidence }}%</div>
-                </div>
-
-                <!-- Reset -->
-                <a href="/" class="btn-reset">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5">
-                        <polyline points="1 4 1 10 7 10" />
-                        <path d="M3.51 15a9 9 0 1 0 .49-5" />
-                    </svg>
-                    Analisis Gambar Lain
-                </a>
-            </div>
-
-            {% else %}
-
-            <!-- ═══════════════════════════════════
-                     STATE 1: UPLOAD & FORM
-                ═══════════════════════════════════ -->
-            <h1 class="page-title">Klasifikasi Tingkat<br>Kematangan Pisang</h1>
-            <p class="page-subtitle">
-                Upload foto pisang — AI kami menganalisis dan menentukan
-                tingkat kematangannya secara instan menggunakan YOLOv8.
-            </p>
-
-            <form id="upload-form" method="POST" enctype="multipart/form-data">
-
-                <!-- Unified Drop Zone / Preview -->
-                <div class="upload-area" id="upload-area">
-                    <!-- Default state -->
-                    <div class="upload-content" id="upload-content">
-                        <div class="upload-icon-wrap">📷</div>
-                        <div class="upload-title">Klik atau seret gambar ke sini</div>
-                        <div class="upload-hint">Mendukung JPG, PNG, JPEG · Maks 10 MB</div>
-                    </div>
-
-                    <!-- Active state (Preview file) -->
-                    <div class="preview-wrap" id="preview-wrap">
-                        <img src="" alt="Preview" class="preview-img" id="preview-img">
-                        <div class="preview-caption">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5">
-                                <polyline points="20 6 9 17 4 12" />
-                            </svg>
-                            <span id="file-name-text">Gambar siap dianalisis</span>
-                        </div>
-                    </div>
-
-                    <input type="file" name="image" id="file-input" accept="image/*" required>
-                </div>
-
-                <!-- Submit -->
-                <button type="submit" class="btn-submit" id="submit-btn" disabled>
-                    <span class="btn-label">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5" style="vertical-align:middle;margin-right:6px">
-                            <circle cx="11" cy="11" r="8" />
-                            <path d="m21 21-4.35-4.35" />
-                        </svg>
-                        Analisis Gambar
-                    </span>
-                    <div class="spinner"></div>
-                </button>
-
-            </form>
-
-            {% endif %}
-
-        </div><!-- /card -->
-
-        <!-- ── Footer ── -->
-        <p class="footer">
-            Ditenagai oleh <strong>YOLOv8s Classification</strong> ·
-            3 kelas: Mentah · Setengah Matang · Matang
-        </p>
-
-    </div><!-- /wrapper -->
+    {% include 'footer.html' %}
 
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>

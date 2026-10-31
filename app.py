@@ -68,8 +68,13 @@ def uploaded_file(filename):
 # ===============================
 # ROUTE HALAMAN UTAMA
 # ===============================
-@app.route("/", methods=["GET", "POST"])
+@app.route("/", methods=["GET"])
 def index():
+    return render_template("index.html")
+
+
+@app.route("/aplikasi", methods=["GET", "POST"])
+def application():
     prediction = None
     confidence = None
     image_path = None
@@ -176,7 +181,7 @@ def index():
             image_path = save_path
 
     return render_template(
-        "index.html",
+        "aplikasi_page.html",
         prediction=prediction,
         confidence=confidence,
         image_path=image_path,

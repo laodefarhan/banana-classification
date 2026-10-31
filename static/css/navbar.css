@@ -1,0 +1,212 @@
+/* Navbar BananaAI */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: calc(100% + 48px);
+    margin-left: -24px;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid rgba(71, 85, 105, 0.14);
+}
+
+.site-header-inner {
+    display: grid;
+    grid-template-columns: minmax(230px, 1fr) auto auto;
+    align-items: center;
+    gap: 30px;
+    width: min(calc(100% - 48px), 1120px);
+    min-height: 76px;
+    margin: 0 auto;
+}
+
+.site-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    width: fit-content;
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-brand-icon {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    background: #FFF3D0;
+    font-size: 19px;
+}
+
+.site-brand-copy {
+    display: grid;
+    gap: 2px;
+}
+
+.site-brand-name {
+    color: #17212B;
+    font-size: 18px;
+    font-weight: 750;
+    letter-spacing: -0.45px;
+    line-height: 1.1;
+}
+
+.site-brand-name > span {
+    color: #B98400;
+}
+
+.site-brand-caption {
+    color: #778291;
+    font-size: 10px;
+    line-height: 1.2;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.site-nav-link {
+    position: relative;
+    padding: 28px 0 26px;
+    color: #526071;
+    font-size: 12px;
+    font-weight: 550;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.18s ease;
+}
+
+.site-nav-link:hover,
+.site-nav-link[aria-current="page"] {
+    color: #17212B;
+}
+
+.site-nav-link[aria-current="page"]::after {
+    position: absolute;
+    right: 0;
+    bottom: 17px;
+    left: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: #D9AC36;
+    content: "";
+}
+
+.site-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 38px;
+    padding: 0 15px;
+    border: 1px solid #D4AA3F;
+    border-radius: 7px;
+    background: #E8C65E;
+    color: #30270F;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.18s ease, border-color 0.18s ease;
+}
+
+.site-cta:hover {
+    border-color: #C99B25;
+    background: #DEB847;
+}
+
+.site-cta svg {
+    width: 15px;
+    height: 15px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.7;
+}
+
+.site-header a:focus-visible {
+    outline: 2px solid #9A6A00;
+    outline-offset: 4px;
+}
+
+/* Jaga agar bagian tujuan tautan tetap terlihat di bawah navbar sticky. */
+#beranda,
+#aplikasi,
+#teknologi,
+#cara-kerja,
+#author {
+    scroll-margin-top: 92px;
+}
+
+@media (max-width: 980px) {
+    .site-header-inner {
+        grid-template-columns: 1fr auto;
+        gap: 8px 18px;
+        padding-top: 10px;
+    }
+
+    .site-brand {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .site-cta {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .site-nav {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        gap: 23px;
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .site-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .site-nav-link {
+        padding: 10px 0 12px;
+    }
+
+    .site-nav-link[aria-current="page"]::after {
+        bottom: 5px;
+    }
+}
+
+@media (max-width: 700px) {
+    .site-header {
+        width: calc(100% + 28px);
+        margin-left: -14px;
+    }
+
+    .site-header-inner {
+        width: calc(100% - 32px);
+    }
+
+    .site-nav {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    .site-header-inner {
+        width: calc(100% - 26px);
+    }
+
+    .site-brand-caption {
+        display: none;
+    }
+
+    .site-cta {
+        min-height: 35px;
+        padding: 0 10px;
+        font-size: 10px;
+    }
+}
