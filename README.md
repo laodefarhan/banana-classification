@@ -271,7 +271,7 @@ YOLOv8 Detection
 
 | Tanggal / Bulan / Tahun | Catatan Update |
 |---|---|
-| 31/10/2026 | Menghapus bagian Author dan menggantinya dengan tabel riwayat update. |
+| 31/10/2026 | update: memperbarui antarmuka dan struktur halaman klasifikasi pisang. |
 ---
 
 ## 📄 Lisensi
