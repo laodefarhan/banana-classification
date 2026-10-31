@@ -267,14 +267,11 @@ YOLOv8 Detection
 
 ---
 
-## 👨‍💻 Author
+## 📅 Riwayat Update
 
-**Laode Farhan Fadilah**
-
-Teknik Informatika
-
-Universitas Borobudur Jakarta
-
+| Tanggal / Bulan / Tahun | Catatan Update |
+|---|---|
+| 31/10/2026 | Menghapus bagian Author dan menggantinya dengan tabel riwayat update. |
 ---
 
 ## 📄 Lisensi
