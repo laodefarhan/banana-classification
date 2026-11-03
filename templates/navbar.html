@@ -13,7 +13,7 @@
             <a class="site-nav-link" href="{{ url_for('cara_kerja') }}" {% if request.endpoint == 'cara_kerja' %}aria-current="page"{% endif %}>Cara kerja</a>
             <a class="site-nav-link" href="{{ url_for('teknologi') }}" {% if request.endpoint == 'teknologi' %}aria-current="page"{% endif %}>Teknologi</a>
             <a class="site-nav-link" href="{{ url_for('application') }}" {% if request.endpoint == 'application' %}aria-current="page"{% endif %}>Aplikasi</a>
-            <span class="site-nav-link" aria-disabled="true">Latar belakang</span>
+            <a class="site-nav-link" href="{{ url_for('author') }}" {% if request.endpoint == 'author' %}aria-current="page"{% endif %}>Author</a>
         </nav>
 
         <a class="site-cta" href="{{ url_for('application') }}">

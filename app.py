@@ -78,6 +78,11 @@ def cara_kerja():
     return render_template("cara_kerja.html")
 
 
+@app.route("/author", methods=["GET"])
+def author():
+    return render_template("author.html")
+
+
 @app.route("/teknologi", methods=["GET"])
 def teknologi():
     return render_template("teknologi.html")

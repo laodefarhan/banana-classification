@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengembang dan Peneliti — BananaAI</title>
+    <meta name="description" content="Kenali pengembang dan riset di balik BananaAI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/author.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+</head>
+<body id="author">
+    {% include 'navbar.html' %}
+    <main class="author-page">
+        <div class="author-topline"><span>◉ &nbsp; DOKUMENTASI TIM PENELITI · BANANAAI V2.4</span><span>● &nbsp; Laboratorium Visi Komputer <i>•</i> Update: Q1 2026</span></div>
+
+        <!-- ===== SECTION 1: PENGANTAR PROFIL ===== -->
+        <section class="author-intro" aria-labelledby="author-title">
+            <div class="intro-title-block">
+                <p class="author-eyebrow">PROFIL PENELITI <span>/ BANANAAI</span></p>
+                <h1 id="author-title">Membangun cara yang lebih cermat untuk membaca <em>kematangan pisang.</em></h1>
+            </div>
+            <div class="intro-context">
+                <p>BananaAI menggabungkan visi komputer dan rekayasa perangkat lunak untuk membantu proses sortasi hasil pertanian.</p>
+                <span class="intro-index">TIM RISET <b>01 — 04</b></span>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 2: PROFIL PENELITI & PUSAT RISET ===== -->
+        <div class="author-layout">
+            <article class="profile-card" aria-labelledby="researcher-name">
+                <div class="portrait-wrap"><img src="{{ url_for('static', filename='images/profile_dev/Profile Developer.png') }}" alt="Foto profil developer BananaAI"></div>
+                <div class="profile-content">
+                    <p class="profile-role">PENGEMBANG &amp; PENELITI <span>·</span> COMPUTER VISION</p>
+                    <h2 id="researcher-name">Laode Farhan Fadilah</h2>
+                    <p class="profile-position">AI Engineer &amp; Computer Vision Researcher</p>
+                    <p class="bio-copy">Mengembangkan BananaAI sebagai sistem klasifikasi kematangan pisang berbasis <strong>YOLOv8s-cls</strong>. Fokus riset mencakup klasifikasi citra, segmentasi ROI adaptif, dan pemodelan ANN untuk membawa visi komputer ke perangkat serta alur kerja pertanian yang lebih mudah dijangkau.</p>
+                    <div class="research-focus"><h3>Fokus dan perangkat kerja</h3><ul class="skill-list"><li>Computer Vision &amp; YOLOv8</li><li>Artificial Neural Network (ANN)</li><li>Python &amp; PyTorch</li><li>Flask REST API &amp; Web UI</li><li>Digital Image Processing (RGB &amp; ROI)</li></ul></div>
+                    <div class="profile-actions"><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub Repository <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a class="contact" href="mailto:research@bananaai.example">Kontak Peneliti <span aria-hidden="true">↗</span></a><a href="{{ url_for('application') }}">Uji Coba Sistem <span aria-hidden="true">→</span></a></div>
+                </div>
+            </article>
+            <aside class="author-aside">
+                <section class="research-card" aria-labelledby="lab-title">
+                    <p class="aside-kicker">AFILIASI AKADEMIK</p>
+                    <h2 id="lab-title">Universitas<br>Borobudur</h2>
+                    <p class="affiliation">Program Studi Teknik Informatika<small>Fakultas Ilmu Komputer</small></p>
+                    <p class="location">Jakarta Timur, DKI Jakarta · Indonesia</p>
+                    <div class="lab-photo"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Ruang kerja riset dan pengujian visi komputer"><span>Borobudur AI Lab <i>·</i> Visi Komputer</span></div>
+                    <div class="pipeline-stats"><div><small>Backbone</small><strong>YOLOv8s</strong></div><div><small>Crop ROI</small><strong>40%</strong></div></div>
+                    <p class="lab-note">Pipeline dirancang untuk inferensi ringan pada komputasi mobile.</p>
+                </section>
+            </aside>
+        </div>
+
+        <!-- ===== SECTION 3: KONTRIBUSI ILMIAH & VALIDASI ===== -->
+        <section class="contribution-section" aria-labelledby="contribution-title">
+            <header class="contribution-heading">
+                <p class="section-kicker">HASIL PENELITIAN <span> / 02</span></p>
+                <div class="contribution-title-row">
+                    <h2 id="contribution-title">Dari pendekatan riset<br>ke parameter terukur.</h2>
+                    <p>Pengujian mencakup variasi pencahayaan serta pisang Cavendish dan varietas lokal. Angka berikut merangkum target dan hasil evaluasi model.</p>
+                </div>
+            </header>
+            <div class="contribution-list">
+                <article class="contribution-item">
+                    <span class="item-number">01</span>
+                    <div class="item-main"><p class="item-type">TOPIK PENELITIAN</p><h3>Klasifikasi kematangan pisang berbasis ANN dan sensor Redmi 9A</h3><p>Studi mandiri tentang penggunaan kamera ponsel terjangkau untuk mendukung sortasi pertanian presisi.</p></div>
+                    <span class="item-result">Skripsi Informatika</span>
+                </article>
+                <article class="contribution-item">
+                    <span class="item-number">02</span>
+                    <div class="item-main"><p class="item-type">EVALUASI MODEL</p><h3>Presisi tinggi dengan waktu inferensi rendah</h3><p>Evaluasi pada dataset pengujian independen menunjukkan performa stabil untuk pemrosesan hingga 60 FPS.</p></div>
+                    <div class="item-result metric-result"><strong>97.92%</strong><span>mAP@0.5</span><small>+4.3% vs baseline · Loss 0.041 · &lt;15 ms</small></div>
+                </article>
+                <article class="contribution-item">
+                    <span class="item-number">03</span>
+                    <div class="item-main"><p class="item-type">PENGOLAHAN CITRA</p><h3>ROI sentral 40% dengan analisis kanal warna</h3><p>Pemotongan area tengah membantu mengurangi pengaruh latar; fitur warna diproses pada ruang RGB dan HSV ternormalisasi.</p></div>
+                    <span class="item-result">RGB + HSV<br>Normalized</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 4: INSPEKSI ARSITEKTUR PIPELINE ===== -->
+        <section class="architecture-section" aria-labelledby="architecture-title">
+            <div class="architecture-intro">
+                <p class="section-kicker">IMPLEMENTASI <span> / 03</span></p>
+                <h2 id="architecture-title">Source code<br>aplikasi BananaAI.</h2>
+                <p>Kode aplikasi Flask untuk menerima gambar, mendeteksi objek pisang, menjalankan klasifikasi, dan menampilkan hasil prediksi.</p>
+                <dl class="runtime-details"><div><dt>Framework</dt><dd>Flask</dd></div><div><dt>Visi komputer</dt><dd>OpenCV + YOLO</dd></div><div><dt>File utama</dt><dd>app.py</dd></div></dl>
+            </div>
+            <div class="architecture-code">
+                <header class="architecture-header">
+                    <span>app.py</span>
+                    <button class="copy-code-button" id="copy-pipeline" type="button" aria-label="Salin kode aplikasi" disabled>Memuat kode...</button>
+                </header>
+                <pre class="code-window" tabindex="0" aria-label="Kode sumber aplikasi BananaAI"><code id="pipeline-code" data-source="{{ url_for('static', filename='code/bananaai_app.py') }}">Memuat kode aplikasi...</code></pre>
+                    <footer class="architecture-footer"><span>Divariasikan pada kondisi pencahayaan dan sampel buah yang berbeda.</span><span>BananaAI · catatan implementasi</span></footer>
+                </div>
+            </section>
+            
+            <!-- ===== SECTION 5: AJAKAN DISKUSI RISET ===== -->
+            <section class="research-cta" aria-labelledby="research-cta-title">
+                <div class="research-cta-copy">
+                    <p class="research-cta-eyebrow"><span>▣</span> Diskusi Terbuka</p>
+                    <h2 id="research-cta-title">Tertarik Mengembangkan Model Ini<br class="desktop-break"> Bersama?</h2>
+                    <p>Terbuka untuk kolaborasi riset computer vision agritech, publikasi jurnal, atau adaptasi<br class="desktop-break"> model ke komoditas buah tropis lainnya.</p>
+                </div>
+                <div class="research-cta-actions">
+                    <a class="research-cta-primary" href="mailto:research@bananaai.example?subject=Diskusi%20Riset%20BananaAI">Mulai Diskusi Riset</a>
+                    <a class="research-cta-secondary" href="{{ url_for('application') }}">Coba Demo Live</a>
+                </div>
+            </section>
+        </main>
+        {% include 'footer.html' %}
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/author.js') }}"></script>
+    </body>
+</html>

@@ -356,13 +356,7 @@
 .guide-stage { display: grid; grid-template-columns: 25px 76px minmax(0, 1fr) 8px; align-items: center; gap: 12px; min-height: 83px; border-bottom: 1px solid #EEF0ED; }
 .guide-stage:last-child { border-bottom: 0; }
 .guide-stage-number { color: #A2AAA2; font-size: 9px; font-weight: 700; }
-.guide-banana { width: 72px; height: 52px; overflow: visible; fill: #6B9A59; }
-.guide-banana .banana-highlight { fill: none; stroke: rgba(255,255,255,.55); stroke-linecap: round; stroke-width: 2; }
-.guide-banana .banana-stem { fill: #536C42; }
-.guide-turning .guide-banana { fill: #B3A746; }
-.guide-turning .guide-banana .banana-stem { fill: #77703D; }
-.guide-ripe .guide-banana { fill: #E3B94F; }
-.guide-ripe .guide-banana .banana-stem { fill: #8F7132; }
+.guide-banana { display:block; width:72px; height:52px; object-fit:contain; }
 .guide-stage-copy { display: grid; gap: 4px; min-width: 0; }
 .guide-stage-copy strong { color: #283631; font-size: 12px; font-weight: 700; }
 .guide-stage-copy span { color: #79847D; font-size: 12px; line-height: 1.45; }

@@ -41,8 +41,7 @@
 .sample-photo { position: relative; display: grid; min-height: 205px; place-items: center; overflow: hidden; border: 1px solid #DDE2DA; background: #EBEEE8; }
 .sample-photo::before, .sample-photo::after { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(90,110,87,.08); content: ""; }
 .sample-photo::before { left: 33%; }.sample-photo::after { left: 66%; }
-.sample-photo svg { position: relative; z-index: 1; width: 88%; max-height: 150px; }
-.sample-banana { fill: #C9B553; }.sample-highlight { fill: none; stroke: rgba(255,255,255,.55); stroke-linecap: round; stroke-width: 3; }.sample-stem { fill: #77713D; }
+.sample-photo img { position:relative; z-index:1; display:block; width:88%; height:150px; object-fit:contain; }
 .photo-label { position: absolute; bottom: 11px; left: 12px; color: #647067; font-size: 8px; font-weight: 600; }
 .flow-arrow { color: #758474; font-size: 17px; text-align: center; }
 .sample-result { display: grid; align-content: center; gap: 11px; min-height: 150px; padding: 13px 12px; border-left: 2px solid #90A183; background: rgba(255,255,255,.6); }
@@ -83,9 +82,9 @@
 .focus-heading > p:last-child { color: #C8D2CA; font-size: 14px; line-height: 1.75; }
 .focus-content { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: clamp(30px, 5vw, 65px); align-items: center; }
 .focus-figure { min-width: 0; margin: 0; }
-.focus-photo { display: grid; min-height: 290px; place-items: center; overflow: hidden; border: 1px solid rgba(235,242,235,.2); background: #30473C; }
-.focus-photo svg { width: 100%; height: auto; max-height: 280px; }
-.focus-fruit-shadow { fill: #788B4C; opacity: .35; }.focus-fruit { fill: #D3B84D; }.focus-fruit-line { fill: none; stroke: rgba(255,255,255,.5); stroke-linecap: round; stroke-width: 3; }.focus-stem { fill: #9F8E43; }
+.focus-photo { position:relative; display:grid; min-height:290px; place-items:center; overflow:hidden; border:1px solid rgba(235,242,235,.2); background:#30473C; }
+.focus-photo > img { position:absolute; inset:29px; width:calc(100% - 58px); height:calc(100% - 58px); object-fit:contain; transform:translate(5%,calc(-18% + 6px)) scale(1.1); }
+.focus-photo svg { position:absolute; inset:0; width:100%; height:100%; max-height:none; pointer-events:none; }
 .focus-box { fill: none; stroke: #E4E9D7; stroke-dasharray: 5 5; stroke-width: 1.2; }.focus-region { fill: rgba(224,190,87,.12); stroke: #E9C95C; stroke-dasharray: 4 3; stroke-width: 1.2; }.focus-corner { fill: none; stroke: #E9C95C; stroke-linecap: square; stroke-width: 2.5; }.focus-label { fill: #F4D66E; font-family: Inter, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: .7px; }
 .focus-figure figcaption { display: flex; justify-content: space-between; gap: 15px; padding-top: 12px; color: #D7E0D8; font-size: 12px; }.focus-figure figcaption span { color: #AEBDB1; text-align: right; }
 .focus-explanation { min-width: 0; }

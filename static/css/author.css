@@ -1,0 +1,105 @@
+/* ===== STRUKTUR HALAMAN ===== */
+.author-page { position:relative; z-index:1; width:calc(100% + 48px); margin:0 -24px; padding:0 max(24px,calc((100% - 1120px)/2)) 56px; color:#17212b; background:#f6f7f8; }
+.author-topline { display:flex; justify-content:space-between; align-items:center; min-height:32px; padding:0 max(0px,calc((100vw - 1120px)/2)); margin:0 calc(max(24px,(100vw - 1120px)/2) * -1); border-bottom:1px solid #e1e5e8; color:#64707b; background:#f6f7f8; font-size:9px; font-weight:650; letter-spacing:.35px; }
+.author-topline i { padding:0 10px; color:#a4abb1; font-style:normal; }
+
+/* ===== SECTION 1: PENGANTAR PROFIL ===== */
+.author-intro { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(240px,.55fr); align-items:end; gap:clamp(36px,8vw,110px); padding:62px 0 48px; border-bottom:1px solid #d9dee2; }
+.author-eyebrow,.section-kicker { margin:0 0 13px; color:#91620f; font-size:9px; font-weight:750; letter-spacing:.8px; }
+.author-eyebrow span,.section-kicker span { color:#9098a0; font-weight:500; }
+.author-intro h1 { max-width:720px; margin:0; color:#15202a; font-size:clamp(34px,5vw,57px); font-weight:650; letter-spacing:-2.5px; line-height:1.06; }
+.author-intro h1 em { color:#a16e12; font-style:normal; }
+.intro-context { max-width:320px; padding-bottom:4px; }
+.intro-context > p { margin:0; color:#58646e; font-size:14px; line-height:1.7; }
+.intro-index { display:flex; justify-content:space-between; margin-top:25px; padding-top:10px; border-top:1px solid #d9dee2; color:#77828b; font-size:9px; font-weight:650; letter-spacing:.5px; }
+.intro-index b { color:#29333d; font-weight:650; }
+
+/* ===== SECTION 2: PROFIL PENELITI & PUSAT RISET ===== */
+.author-layout { display:grid; grid-template-columns:minmax(0,1.65fr) minmax(280px,.72fr); align-items:stretch; gap:clamp(30px,6vw,80px); padding:48px 0 55px; border-bottom:1px solid #d9dee2; }
+.profile-card { display:grid; grid-template-columns:minmax(185px,.62fr) minmax(0,1.38fr); align-content:start; gap:clamp(22px,3.2vw,42px); }
+.portrait-wrap { position:relative; min-height:290px; max-height:410px; overflow:hidden; border-radius:30px 0 30px 0; background:#e3e5e5; box-shadow:0 12px 28px rgba(23,33,43,.12); }
+.portrait-wrap img { display:block; width:100%; height:100%; min-height:290px; object-fit:cover; object-position:center 32%; filter:saturate(.82); }
+.profile-content { min-width:0; padding:5px 0 0; }
+.profile-role { margin:0 0 12px; color:#8e6519; font-size:10px; font-weight:750; letter-spacing:.55px; }.profile-role span { padding:0 4px; color:#a8afb5; }
+.profile-content h2 { margin:0; color:#17212b; font-size:clamp(25px,3.1vw,37px); font-weight:650; letter-spacing:-1.45px; line-height:1.12; }
+.profile-position { margin:8px 0 22px; color:#68747e; font-size:13px; }
+.bio-copy { max-width:540px; margin:0; color:#45515b; font-size:13px; line-height:1.8; }.bio-copy strong { color:#26323b; font-weight:700; }
+.research-focus { margin-top:27px; padding-top:15px; border-top:1px solid #d9dee2; }
+.research-focus h3 { margin:0 0 11px; color:#56616a; font-size:10px; font-weight:750; letter-spacing:.55px; text-transform:uppercase; }
+.skill-list { display:flex; flex-wrap:wrap; gap:7px 15px; margin:0; padding:0; list-style:none; }
+.skill-list li { color:#34414b; font-size:11px; line-height:1.55; }.skill-list li::before { content:"/"; margin-right:6px; color:#bd8a2f; }
+.profile-actions { display:flex; flex-wrap:wrap; gap:7px 18px; margin-top:24px; }
+.profile-actions a { display:inline-flex; align-items:center; gap:6px; min-height:32px; border-bottom:1px solid #cbd1d5; color:#34414b; font-size:11px; text-decoration:none; transition:color .18s ease,border-color .18s ease; }
+.profile-actions a:hover,.profile-actions a:focus-visible { border-color:#a87416; color:#8c5d0b; }.profile-actions a:focus-visible,.copy-code-button:focus-visible { outline:2px solid #bb862a; outline-offset:3px; }
+.profile-actions a span { color:#a17725; }
+.author-aside { display:flex; flex-direction:column; border-left:1px solid #d9dee2; padding-left:clamp(20px,3vw,38px); }
+.research-card { display:flex; flex:1; flex-direction:column; }
+.aside-kicker { margin:2px 0 16px; color:#8c651b; font-size:9px; font-weight:750; letter-spacing:.65px; }
+.research-card h2 { margin:0 0 18px; color:#1a252d; font-size:27px; font-weight:650; letter-spacing:-1px; line-height:1.13; }
+.affiliation { margin:0; color:#394650; font-size:12px; font-weight:600; line-height:1.6; }.affiliation small { display:block; color:#727e87; font-size:11px; font-weight:400; }
+.location { margin:9px 0 17px; color:#727e87; font-size:11px; }
+.lab-photo { position:relative; height:120px; overflow:hidden; background:#e1e4e5; }.lab-photo img { display:block; width:100%; height:100%; object-fit:cover; filter:saturate(.75); }.lab-photo span { position:absolute; right:0; bottom:0; left:0; padding:20px 10px 9px; color:#fff; background:linear-gradient(transparent,#10171eaf); font-size:10px; font-weight:600; }.lab-photo i { padding:0 3px; color:#e5bb69; font-style:normal; }
+.pipeline-stats { display:grid; grid-template-columns:1fr 1fr; margin-top:15px; border-top:1px solid #d9dee2; border-bottom:1px solid #d9dee2; }
+.pipeline-stats div { display:grid; gap:4px; padding:11px 7px 11px 0; }.pipeline-stats div + div { padding-left:14px; border-left:1px solid #d9dee2; }
+.pipeline-stats small { color:#78838b; font-size:10px; }.pipeline-stats strong { color:#27333d; font-size:15px; font-weight:650; }.lab-note { margin:10px 0 0; color:#77828a; font-size:11px; line-height:1.5; }
+
+/* ===== SECTION 3: KONTRIBUSI ILMIAH & VALIDASI ===== */
+.contribution-section { padding:55px 0 57px; border-bottom:1px solid #d9dee2; }
+.contribution-heading { margin-bottom:26px; }.contribution-title-row { display:grid; grid-template-columns:minmax(0,1fr) minmax(230px,.58fr); align-items:end; gap:40px; }
+.contribution-title-row h2,.architecture-intro h2 { margin:0; color:#17212b; font-size:clamp(27px,3.5vw,39px); font-weight:650; letter-spacing:-1.55px; line-height:1.12; }
+.contribution-title-row > p { max-width:365px; margin:0 0 3px; color:#67737c; font-size:14px; line-height:1.7; }
+.contribution-list { border-top:1px solid #cfd5d9; }
+.contribution-item { display:grid; grid-template-columns:48px minmax(0,1fr) minmax(150px,.45fr); align-items:center; gap:20px; min-height:126px; padding:18px 8px; border-bottom:1px solid #d9dee2; }
+.item-number { align-self:start; padding-top:4px; color:#a17a32; font-size:10px; font-weight:700; letter-spacing:.35px; }
+.item-type { margin:0 0 6px; color:#8c651b; font-size:9px; font-weight:750; letter-spacing:.65px; }
+.item-main h3 { margin:0; color:#1f2b34; font-size:15px; font-weight:650; letter-spacing:-.2px; line-height:1.4; text-transform:capitalize; }
+.item-main > p:last-child { max-width:670px; margin:5px 0 0; color:#6b7780; font-size:12px; line-height:1.6; }
+.item-result { justify-self:end; color:#53606a; font-size:11px; line-height:1.55; text-align:right; }
+.metric-result { display:grid; grid-template-columns:auto 1fr; align-items:baseline; column-gap:8px; }.metric-result strong { color:#8b5e0c; font-size:25px; font-weight:700; letter-spacing:-.7px; }.metric-result span { color:#58646d; font-size:10px; }.metric-result small { grid-column:1/-1; color:#7b858c; font-size:10px; text-align:right; }
+
+/* ===== SECTION 4: INSPEKSI ARSITEKTUR PIPELINE ===== */
+.architecture-section { display:grid; grid-template-columns:minmax(210px,.6fr) minmax(0,1.4fr); gap:clamp(30px,6vw,78px); padding:55px 0 58px; border-bottom:1px solid #d9dee2; }
+.architecture-intro > p:not(.section-kicker) { max-width:320px; margin:14px 0 25px; color:#637079; font-size:14px; line-height:1.75; }
+.runtime-details { margin:0; border-top:1px solid #d1d7da; }.runtime-details div { display:flex; justify-content:space-between; gap:12px; padding:9px 0; border-bottom:1px solid #d1d7da; font-size:11px; }.runtime-details dt { color:#758089; }.runtime-details dd { margin:0; color:#34414a; font-weight:650; text-align:right; }
+.architecture-code { min-width:0; }
+.architecture-header { display:flex; justify-content:space-between; align-items:center; min-height:39px; padding:0 2px; border-bottom:1px solid #d1d7da; color:#59656e; font-family:Consolas,"SFMono-Regular",monospace; font-size:10px; }
+.copy-code-button { padding:7px 10px; border:1px solid #cfd5d8; color:#3e4a53; background:#fff; font-family:Inter,sans-serif; font-size:10px; cursor:pointer; transition:border-color .18s ease,color .18s ease; }.copy-code-button:hover:not(:disabled) { border-color:#a87416; color:#8c5d0b; }.copy-code-button:disabled { color:#8a9298; cursor:wait; }
+.code-window { width:100%; height:min(68vh,560px); min-height:300px; overflow:auto; overscroll-behavior:contain; margin:0; padding:18px 20px; color:#e4e9ee; background:#202833; font-family:Consolas,"SFMono-Regular",monospace; font-size:10px; line-height:1.75; tab-size:4; white-space:pre; }
+.code-comment { color:#d9b66d; }.code-keyword { color:#9bbce0; }.code-string { color:#d6a478; }.code-number { color:#c7a3db; }.code-bool { color:#9cc9bd; }
+.architecture-footer { display:flex; justify-content:space-between; gap:15px; padding-top:10px; color:#77828a; font-size:10px; line-height:1.5; }
+
+/* ===== SECTION 5: AJAKAN DISKUSI RISET (TETAP) ===== */
+.research-cta { display:flex; justify-content:space-between; align-items:center; gap:28px; margin-top:28px; padding:28px 34px; border:1px solid rgba(255,255,255,.75); border-radius:34px; background:linear-gradient(112deg,#f3f0e5 0%,#eceeff 55%,#faece4 100%); }
+.research-cta-copy { min-width:0; }.research-cta-eyebrow { display:inline-flex; align-items:center; gap:6px; margin:0 0 8px; padding:4px 9px; border-radius:14px; color:#755b23; background:#fff; font-size:10px; font-weight:650; }.research-cta-eyebrow span { color:#a26a0b; }
+.research-cta h2 { margin:0; color:#111a30; font-size:23px; font-weight:750; letter-spacing:-.65px; line-height:1.25; }.research-cta-copy > p:last-child { margin:7px 0 0; color:#666775; font-size:12px; line-height:1.55; }
+.research-cta-actions { display:flex; flex:0 0 auto; align-items:center; gap:9px; }.research-cta-actions a { display:inline-flex; min-height:40px; align-items:center; justify-content:center; padding:0 17px; border-radius:22px; color:#172039; background:#fff; font-size:11px; font-weight:600; text-decoration:none; white-space:nowrap; transition:transform .18s ease,box-shadow .18s ease; }
+.research-cta-actions a:hover { transform:translateY(-2px); box-shadow:0 6px 16px #252a401c; }.research-cta-actions .research-cta-primary { color:#fff; background:#95600a; box-shadow:0 3px 8px #68400a26; }
+
+/* ===== RESPONSIVE: TABLET ===== */
+@media (max-width:900px) {
+    .author-intro { grid-template-columns:minmax(0,1.2fr) minmax(210px,.8fr); gap:38px; padding:48px 0 38px; }
+    .author-layout { grid-template-columns:minmax(0,1.4fr) minmax(235px,.75fr); gap:28px; }
+    .profile-card { grid-template-columns:minmax(145px,.58fr) minmax(0,1.42fr); gap:22px; }
+    .portrait-wrap,.portrait-wrap img { min-height:245px; }
+    .author-aside { padding-left:22px; }
+    .architecture-section { grid-template-columns:minmax(190px,.65fr) minmax(0,1.35fr); gap:30px; }
+    .code-window { font-size:9px; }
+}
+
+/* ===== RESPONSIVE: MOBILE ===== */
+@media (max-width:640px) {
+    .author-page { width:100%; margin:0; padding:0 18px 34px; }
+    .author-topline { min-height:30px; margin:0 -18px; padding:0 18px; font-size:8px; }.author-topline span:last-child { display:none; }
+    .author-intro { grid-template-columns:1fr; gap:20px; padding:38px 0 30px; }.author-intro h1 { max-width:560px; font-size:clamp(34px,10vw,46px); letter-spacing:-1.8px; }.intro-context { max-width:420px; }.intro-context > p { font-size:15px; }.intro-index { margin-top:15px; }
+    .author-layout { grid-template-columns:1fr; gap:30px; padding:30px 0 34px; }
+    .profile-card { grid-template-columns:1fr; gap:17px; }.portrait-wrap { width:138px; min-height:170px; }.portrait-wrap img { min-height:170px; }.profile-content { padding-top:0; }.profile-role { font-size:9px; line-height:1.5; }.profile-content h2 { font-size:25px; }.profile-position { margin:6px 0 13px; font-size:12px; }
+    .bio-copy { margin-top:2px; font-size:12px; line-height:1.75; }.research-focus { margin-top:17px; }.skill-list { gap:6px 12px; }.skill-list li { font-size:11px; }.profile-actions { margin-top:16px; gap:4px 14px; }.profile-actions a { min-height:38px; font-size:11px; }
+    .author-aside { border-top:1px solid #d9dee2; border-left:0; padding:23px 0 0; }.research-card h2 br { display:none; }.research-card h2 { margin-bottom:9px; font-size:24px; }.location { margin-bottom:13px; }.lab-photo { height:145px; }.pipeline-stats { max-width:360px; }
+    .contribution-section { padding:36px 0 38px; }.contribution-title-row { grid-template-columns:1fr; gap:12px; }.contribution-title-row h2,.architecture-intro h2 { font-size:31px; }.contribution-title-row > p { font-size:12px; }.contribution-item { grid-template-columns:28px minmax(0,1fr); gap:12px; padding:16px 0; }.item-number { grid-row:1/3; }.item-result { grid-column:2; justify-self:start; margin-top:6px; text-align:left; }.metric-result { grid-template-columns:auto 1fr; }.metric-result small { text-align:left; }
+    .architecture-section { grid-template-columns:1fr; gap:24px; padding:36px 0 38px; }.architecture-intro > p:not(.section-kicker) { margin:10px 0 18px; font-size:12px; }.runtime-details { max-width:420px; }.architecture-header { min-height:42px; }.code-window { height:min(62vh,420px); min-height:260px; padding:15px 13px; font-size:9px; line-height:1.7; }.architecture-footer { flex-direction:column; gap:4px; }
+    .research-cta { align-items:flex-start; flex-direction:column; gap:17px; margin-top:20px; padding:22px 20px; border-radius:24px; }.research-cta h2 { font-size:21px; }.research-cta-copy > p:last-child { font-size:12px; }.desktop-break { display:none; }.research-cta-actions { flex-wrap:wrap; }.research-cta-actions a { min-height:42px; padding:0 14px; font-size:11px; }
+}
+
+@media (max-width:380px) {
+    .profile-card { gap:14px; }.portrait-wrap { width:118px; min-height:145px; }.portrait-wrap img { min-height:145px; }.profile-content h2 { font-size:22px; }.profile-actions { gap:2px 10px; }.profile-actions a { font-size:9px; }.architecture-header { font-size:9px; }.copy-code-button { padding:6px 7px; font-size:8px; }
+}
