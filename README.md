@@ -271,7 +271,8 @@ YOLOv8 Detection
 
 | Tanggal / Bulan / Tahun | Catatan Update |
 |---|---|
-| 31/10/2026 | update: memperbarui antarmuka dan struktur halaman klasifikasi pisang. |
+| 31/10/2026 | docs: memperbarui antarmuka dan struktur halaman klasifikasi pisang. |
+| 03/11/2026 | docs: memperbarui tampilan website klasifikasi pisang. |
 ---
 
 ## 📄 Lisensi
