@@ -1,260 +1,226 @@
-<!-- SECTION BERANDA / HERO: pengantar BananaAI, tombol tindakan, dan panduan tahap kematangan pisang. -->
+<!-- SECTION BERANDA / HERO: pengenalan klasifikasi, aksi utama, dan panduan visual kategori. -->
 <section class="home-hero" aria-labelledby="home-hero-title">
-    <div class="home-hero-inner">
-        <div class="hero-copy">
-            <p class="hero-eyebrow">
-                <span class="hero-eyebrow-mark" aria-hidden="true"></span>
-                Klasifikasi kematangan pisang
-            </p>
+    <div class="landing-hero-inner">
+        <div class="landing-copy">
+            <p class="landing-eyebrow"><span aria-hidden="true"></span> BananaAI <span class="eyebrow-divider">/</span> Klasifikasi kematangan</p>
+            <h1 id="home-hero-title">Kenali kematangan pisang, cukup dari sebuah foto.</h1>
+            <p class="landing-description">Unggah foto pisang dan dapatkan perkiraan tingkat kematangannya dengan bantuan model klasifikasi YOLOv8.</p>
 
-            <h1 id="home-hero-title">Kenali tingkat kematangan pisang dari sebuah foto.</h1>
-
-            <p class="hero-description">
-                Unggah foto untuk mendapatkan perkiraan kategori kematangan pisang—mentah, setengah matang,
-                atau matang—dengan model klasifikasi YOLOv8.
-            </p>
-
-            <div class="hero-actions">
-                <a class="hero-button hero-button-primary" href="{{ url_for('application') }}">
+            <div class="landing-actions">
+                <a class="landing-button landing-button-primary" href="{{ url_for('application') }}">
                     Mulai klasifikasi
                     <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M10 5l5 5-5 5" /></svg>
                 </a>
-                <a class="hero-button hero-button-secondary" href="{{ url_for('index') }}#about">Tentang proyek</a>
+                <a class="landing-button landing-button-secondary" href="{{ url_for('index') }}#about">Tentang proyek <span aria-hidden="true">↓</span></a>
             </div>
 
-            <div class="hero-facts" aria-label="Informasi aplikasi">
-                <div class="hero-fact">
-                    <strong>3 kategori</strong>
-                    <span>Mentah, setengah matang, matang</span>
-                </div>
-                <div class="hero-fact">
-                    <strong>YOLOv8s-cls</strong>
-                    <span>Model klasifikasi gambar</span>
-                </div>
-            </div>
+            <p class="landing-reassurance"><span aria-hidden="true">✓</span> Unggah satu foto untuk memulai analisis</p>
         </div>
 
-        <div class="hero-visual">
-            <section class="ripeness-card" aria-labelledby="ripeness-card-title">
-                <div class="ripeness-card-header">
-                    <div>
-                        <p class="ripeness-card-kicker">Panduan singkat</p>
-                        <h2 id="ripeness-card-title">Tahap kematangan</h2>
-                    </div>
-                    <span class="ripeness-card-icon" aria-hidden="true">🍌</span>
+        <aside class="ripeness-guide" aria-labelledby="ripeness-guide-title">
+            <div class="guide-heading">
+                <div>
+                    <p class="guide-kicker">Panduan visual</p>
+                    <h2 id="ripeness-guide-title">Tiga tahap kematangan</h2>
                 </div>
+                <span class="guide-count">01—03</span>
+            </div>
 
-                <ol class="ripeness-list">
-                    <li class="ripeness-stage stage-unripe">
-                        <span class="stage-indicator" aria-hidden="true"></span>
-                        <span class="stage-number">01</span>
-                        <span class="stage-copy">
-                            <strong>Mentah</strong>
-                            <span>Warna hijau masih dominan</span>
-                        </span>
-                    </li>
-                    <li class="ripeness-stage stage-turning">
-                        <span class="stage-indicator" aria-hidden="true"></span>
-                        <span class="stage-number">02</span>
-                        <span class="stage-copy">
-                            <strong>Setengah matang</strong>
-                            <span>Warna hijau mulai berubah</span>
-                        </span>
-                    </li>
-                    <li class="ripeness-stage stage-ripe">
-                        <span class="stage-indicator" aria-hidden="true"></span>
-                        <span class="stage-number">03</span>
-                        <span class="stage-copy">
-                            <strong>Matang</strong>
-                            <span>Warna kuning lebih dominan</span>
-                        </span>
-                    </li>
-                </ol>
+            <ol class="guide-list">
+                <li class="guide-stage guide-unripe">
+                    <span class="guide-stage-number">01</span>
+                    <svg class="guide-banana" viewBox="0 0 100 64" aria-hidden="true"><path d="M12 12c6 18 22 32 42 35 18 3 33-5 42-21-4 20-19 32-40 32C33 58 13 41 8 18l4-6Z"/><path class="banana-highlight" d="M18 19c7 14 21 24 37 26"/><path class="banana-stem" d="m10 11 5-5 3 7-5 3Z"/></svg>
+                    <span class="guide-stage-copy"><strong>Mentah</strong><span>Hijau masih dominan</span></span>
+                    <span class="guide-stage-swatch" aria-hidden="true"></span>
+                </li>
+                <li class="guide-stage guide-turning">
+                    <span class="guide-stage-number">02</span>
+                    <svg class="guide-banana" viewBox="0 0 100 64" aria-hidden="true"><path d="M12 12c6 18 22 32 42 35 18 3 33-5 42-21-4 20-19 32-40 32C33 58 13 41 8 18l4-6Z"/><path class="banana-highlight" d="M18 19c7 14 21 24 37 26"/><path class="banana-stem" d="m10 11 5-5 3 7-5 3Z"/></svg>
+                    <span class="guide-stage-copy"><strong>Setengah matang</strong><span>Hijau mulai menguning</span></span>
+                    <span class="guide-stage-swatch" aria-hidden="true"></span>
+                </li>
+                <li class="guide-stage guide-ripe">
+                    <span class="guide-stage-number">03</span>
+                    <svg class="guide-banana" viewBox="0 0 100 64" aria-hidden="true"><path d="M12 12c6 18 22 32 42 35 18 3 33-5 42-21-4 20-19 32-40 32C33 58 13 41 8 18l4-6Z"/><path class="banana-highlight" d="M18 19c7 14 21 24 37 26"/><path class="banana-stem" d="m10 11 5-5 3 7-5 3Z"/></svg>
+                    <span class="guide-stage-copy"><strong>Matang</strong><span>Kuning lebih dominan</span></span>
+                    <span class="guide-stage-swatch" aria-hidden="true"></span>
+                </li>
+            </ol>
+            <p class="guide-footnote">Hasil berupa kategori kematangan dan tingkat keyakinan model.</p>
+        </aside>
+    </div>
+</section>
 
-                <p class="ripeness-card-note">
-                    Hasil analisis ditampilkan bersama tingkat keyakinan model.
-                </p>
+<!-- SECTION TENTANG PROYEK: menjelaskan konsep RGB/ANN dan membedakannya dari model YOLO pada demo. -->
+<section class="about-section" id="about" aria-labelledby="about-title">
+    <div class="about-inner">
+        <header class="about-heading">
+            <div>
+                <p class="about-eyebrow"><span aria-hidden="true"></span> Tentang proyek <span class="about-index">01 / 04</span></p>
+                <h2 id="about-title">Membaca warna untuk memahami kematangan.</h2>
+            </div>
+            <p class="about-intro">Proyek ini mengkaji bagaimana citra pisang dapat dipetakan ke kategori kematangan. Kanal warna RGB dan jaringan saraf menjelaskan konsep penelitiannya; aplikasi demo mengklasifikasikan foto dengan YOLOv8.</p>
+        </header>
+
+        <div class="method-flow" aria-label="Ringkasan konsep pemetaan citra ke kategori kematangan">
+            <section class="method-step method-input" aria-labelledby="method-input-title">
+                <p class="method-step-index">01 <span>Masukan</span></p>
+                <h3 id="method-input-title">Citra pisang</h3>
+                <p>Warna pada foto dibaca melalui tiga kanal dasar.</p>
+                <div class="channel-list" aria-label="Kanal warna merah hijau dan biru">
+                    <div class="channel-row channel-red"><span>R</span><i></i><strong>Merah</strong></div>
+                    <div class="channel-row channel-green"><span>G</span><i></i><strong>Hijau</strong></div>
+                    <div class="channel-row channel-blue"><span>B</span><i></i><strong>Biru</strong></div>
+                </div>
             </section>
-            <p class="hero-visual-caption">Unggah foto untuk mendapatkan hasil klasifikasi.</p>
+
+            <section class="method-step method-mapping" aria-labelledby="method-mapping-title">
+                <p class="method-step-index">02 <span>Pemetaan konsep</span></p>
+                <h3 id="method-mapping-title">Pola warna → kategori</h3>
+                <p>Dalam konsep penelitian, jaringan saraf mempelajari hubungan antara kombinasi warna dan tingkat kematangan.</p>
+                <div class="mapping-visual" role="img" aria-label="Ilustrasi jaringan saraf yang menghubungkan tiga kanal warna dengan kategori kematangan">
+                    <svg viewBox="0 0 420 150" preserveAspectRatio="none" aria-hidden="true">
+                        <g class="mapping-lines">
+                            <path d="M28 25L190 22 M28 25L190 75 M28 25L190 128 M28 75L190 22 M28 75L190 75 M28 75L190 128 M28 125L190 22 M28 125L190 75 M28 125L190 128" />
+                            <path d="M205 22L390 25 M205 22L390 75 M205 22L390 125 M205 75L390 25 M205 75L390 75 M205 75L390 125 M205 128L390 25 M205 128L390 75 M205 128L390 125" />
+                        </g>
+                        <g class="mapping-inputs"><circle cx="28" cy="25" r="6"/><circle cx="28" cy="75" r="6"/><circle cx="28" cy="125" r="6"/></g>
+                        <g class="mapping-hidden"><circle cx="190" cy="22" r="7"/><circle cx="190" cy="75" r="7"/><circle cx="190" cy="128" r="7"/><circle cx="205" cy="22" r="7"/><circle cx="205" cy="75" r="7"/><circle cx="205" cy="128" r="7"/></g>
+                        <g class="mapping-output"><circle cx="390" cy="25" r="6"/><circle cx="390" cy="75" r="6"/><circle cx="390" cy="125" r="6"/></g>
+                    </svg>
+                </div>
+                <div class="mapping-labels"><span>Kanal RGB</span><span>Jaringan saraf</span><span>Kelas</span></div>
+            </section>
+
+            <section class="method-step method-output" aria-labelledby="method-output-title">
+                <p class="method-step-index">03 <span>Keluaran</span></p>
+                <h3 id="method-output-title">Tiga kategori</h3>
+                <p>Hasil disajikan sebagai kategori kematangan beserta keyakinan prediksi.</p>
+                <ul class="class-list">
+                    <li><i class="class-dot class-dot-unripe"></i> Mentah <span>Hijau</span></li>
+                    <li><i class="class-dot class-dot-turning"></i> Setengah matang <span>Transisi</span></li>
+                    <li><i class="class-dot class-dot-ripe"></i> Matang <span>Kuning</span></li>
+                </ul>
+            </section>
         </div>
+
+        <footer class="about-footer">
+            <p><strong>Untuk dicoba</strong><span>Unggah foto pada aplikasi demo yang menggunakan model YOLOv8.</span></p>
+            <p class="about-model"><strong>YOLOv8s-cls</strong><span>Model klasifikasi demo</span></p>
+            <p class="about-accuracy"><strong>97,92%</strong><span>Akurasi pengujian</span></p>
+            <a class="about-cta" href="{{ url_for('application') }}">Coba klasifikasi <span aria-hidden="true">→</span></a>
+        </footer>
     </div>
 </section>
 
-<!-- SECTION TENTANG PROYEK: latar belakang sortasi pisang dan diagram arsitektur ANN dengan spektrum RGB. -->
-<section class="project-section" id="about" aria-labelledby="project-section-title">
-    <div class="project-section-inner">
-        <div class="project-story">
-            <p class="project-eyebrow"><span aria-hidden="true"></span> Tentang proyek</p>
-            <h2 id="project-section-title">Membaca pola warna untuk mengenali kematangan.</h2>
-            <p class="project-intro">
-                Diagram ini menggambarkan konsep penelitian: kanal warna RGB dipetakan oleh jaringan saraf ke
-                kategori kematangan. Pada aplikasi yang dapat dicoba, klasifikasi foto dijalankan menggunakan YOLOv8.
-            </p>
-            <div class="project-details">
-                <div class="project-detail">
-                    <span class="project-detail-number">01</span>
-                    <p><strong>Masukan</strong><span>Citra pisang direpresentasikan melalui kanal warna merah, hijau, dan biru.</span></p>
-                </div>
-                <div class="project-detail">
-                    <span class="project-detail-number">02</span>
-                    <p><strong>Pemetaan</strong><span>Jaringan saraf menghubungkan pola warna dengan kategori kematangan.</span></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-process">
-            <div class="ann-card">
-                <div class="ann-card-header">
-                    <div class="ann-card-title"><span aria-hidden="true"></span> Arsitektur ANN + Spektrum RGB</div>
-                    <span class="ann-model-label">Feedforward model</span>
-                </div>
-
-                <div class="ann-diagram" role="img" aria-label="Kanal warna merah, hijau, dan biru diproses jaringan saraf menjadi kelas kematangan">
-                    <div class="ann-column ann-input-column">
-                        <p>Input citra (RGB)</p>
-                        <span class="rgb-channel rgb-red">R</span>
-                        <span class="rgb-channel rgb-green">G</span>
-                        <span class="rgb-channel rgb-blue">B</span>
-                    </div>
-                    <div class="ann-column ann-hidden-column">
-                        <p>Hidden layers</p>
-                        <div class="ann-network" aria-hidden="true">
-                            <svg viewBox="0 0 150 120" preserveAspectRatio="none">
-                                <path d="M0 20 L150 18 M0 20 L150 60 M0 20 L150 102 M0 60 L150 18 M0 60 L150 60 M0 60 L150 102 M0 100 L150 18 M0 100 L150 60 M0 100 L150 102" />
-                            </svg>
-                            <span class="network-node node-one"></span>
-                            <span class="network-node node-two"></span>
-                            <span class="network-node node-three"></span>
-                        </div>
-                    </div>
-                    <div class="ann-column ann-output-column">
-                        <p>Output kelas</p>
-                        <span>Mentah</span>
-                        <span>Setengah</span>
-                        <span>Matang</span>
-                    </div>
-                </div>
-
-                <div class="ann-card-footer">
-                    <span>Kamera sensor RGB</span>
-                    <strong>R:238 <i>·</i> G:195 <i>·</i> B:48</strong>
-                </div>
-            </div>
-
-            <div class="innovation-validation">
-                <span><i aria-hidden="true">ϟ</i> Latensi sangat rendah (&lt;15 ms)</span>
-                <strong>Akurasi 97,92%</strong>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- SECTION TANTANGAN & SOLUSI: menjelaskan persoalan sortasi manual dan pendekatan yang digunakan BananaAI. -->
+<!-- SECTION TANTANGAN & SOLUSI: membandingkan ketidakseragaman pemeriksaan manual dengan acuan hasil klasifikasi foto. -->
 <section class="challenge-section" id="problem-solution" aria-labelledby="challenge-title">
     <div class="challenge-inner">
         <div class="challenge-intro">
             <p class="challenge-eyebrow"><span aria-hidden="true"></span> Tantangan &amp; solusi</p>
-            <h2 id="challenge-title">Sortasi manual sulit menjaga konsistensi.</h2>
-            <p class="challenge-summary">
-                Pada sortasi manual, keputusan sering bergantung pada pengamatan setiap orang. Tantangan utamanya
-                adalah menjaga hasil penilaian tetap seragam saat buah diperiksa dalam jumlah banyak.
-            </p>
+            <h2 id="challenge-title">Penilaian yang konsisten dimulai dari acuan yang sama.</h2>
+            <p class="challenge-summary">Warna kulit pisang berubah bertahap. Saat pemeriksaan dilakukan hanya dengan pengamatan, batas antar kategori bisa berbeda bagi setiap orang.</p>
             <a class="challenge-link" href="{{ url_for('application') }}">Coba klasifikasi <span aria-hidden="true">→</span></a>
         </div>
 
-        <div class="challenge-details">
-            <article class="challenge-point">
-                <span class="challenge-number">01</span>
-                <div class="challenge-point-copy">
-                    <p class="challenge-point-label">Masalah</p>
-                    <h3>Standar visual tidak selalu sama</h3>
-                    <p>Perbedaan pengalaman dan kondisi pengamatan dapat membuat dua orang memberi penilaian berbeda pada buah dengan tingkat kematangan serupa.</p>
+        <div class="challenge-comparison" aria-label="Perbandingan pemeriksaan manual dengan bantuan klasifikasi foto">
+            <p class="comparison-heading">Perubahan pendekatan</p>
+            <article class="comparison-row comparison-manual">
+                <span class="comparison-index">Sebelum</span>
+                <div>
+                    <h3>Pengamatan manual</h3>
+                    <p>Pengalaman pemeriksa dan kondisi cahaya dapat memengaruhi cara warna buah ditafsirkan. Buah yang serupa berisiko mendapat penilaian berbeda.</p>
                 </div>
             </article>
-            <article class="challenge-point">
-                <span class="challenge-number">02</span>
-                <div class="challenge-point-copy">
-                    <p class="challenge-point-label">Solusi yang ditawarkan</p>
-                    <h3>Penilaian dengan acuan yang sama</h3>
-                    <p>Klasifikasi berbasis citra memberi hasil melalui kategori yang telah ditetapkan sehingga proses pemeriksaan memiliki acuan yang lebih terukur.</p>
+            <article class="comparison-row comparison-assisted">
+                <span class="comparison-index">Dengan sistem</span>
+                <div>
+                    <h3>Klasifikasi berbasis foto</h3>
+                    <p>BananaAI menganalisis gambar dan menyajikan salah satu dari tiga kategori kematangan sebagai acuan pemeriksaan awal.</p>
                 </div>
             </article>
-            <p class="challenge-outcome"><span aria-hidden="true">✓</span> Fokus: mengurangi perbedaan penilaian antar pemeriksa</p>
+            <p class="challenge-outcome"><span aria-hidden="true">↳</span><span><strong>Tujuan:</strong> membantu mengurangi perbedaan penilaian, bukan menggantikan pemeriksaan manusia.</span></p>
         </div>
     </div>
 </section>
 
-<!-- SECTION MISI & TUJUAN: menjelaskan sasaran pengembangan klasifikasi kematangan pisang. -->
+<!-- SECTION MISI & TUJUAN: menampilkan arah pengembangan dan tiga sasaran BananaAI. -->
 <section class="mission-section" id="visi-tujuan" aria-labelledby="mission-title">
     <div class="mission-inner">
-        <div class="mission-intro">
-            <p class="mission-eyebrow"><span aria-hidden="true"></span> Misi dan tujuan</p>
-            <h2 id="mission-title">Membangun sortasi pisang yang lebih terukur.</h2>
-            <p class="mission-summary">
-                Pengembangan BananaAI diarahkan pada manfaat praktis bagi proses sortasi. Sasaran berikut menjadi
-                ukuran kegunaan sistem dalam konteks penelitian ini.
-            </p>
-            <a class="mission-link" href="{{ url_for('application') }}">Lihat aplikasi <span aria-hidden="true">→</span></a>
-        </div>
+        <header class="mission-heading">
+            <div class="mission-heading-main">
+                <p class="mission-eyebrow"><span aria-hidden="true"></span> Misi &amp; tujuan <span class="mission-index">02 / 04</span></p>
+                <h2 id="mission-title">Teknologi sebagai alat bantu untuk sortasi yang lebih terukur.</h2>
+            </div>
+            <div class="mission-heading-aside">
+                <p>BananaAI dikembangkan untuk membantu pemeriksaan awal kematangan pisang melalui foto. Tiga sasaran ini menjadi arah pengembangan, bukan pengganti penilaian langsung.</p>
+                <a class="mission-link" href="{{ url_for('application') }}">Lihat aplikasi <span aria-hidden="true">→</span></a>
+            </div>
+        </header>
 
-        <div class="mission-list" aria-label="Sasaran pengembangan BananaAI">
-            <article class="mission-item">
+        <ol class="mission-list" aria-label="Tiga sasaran pengembangan BananaAI">
+            <li class="mission-item">
                 <span class="mission-number">01</span>
                 <div class="mission-item-copy">
                     <h3>Informasi yang mudah dipahami</h3>
-                    <p>Menyajikan kategori hasil dengan istilah yang jelas agar dapat digunakan sebagai bahan pertimbangan.</p>
+                    <p>Menyajikan kategori mentah, setengah matang, dan matang dengan istilah yang jelas sebagai bahan pertimbangan.</p>
                 </div>
-            </article>
-            <article class="mission-item">
+            </li>
+            <li class="mission-item">
                 <span class="mission-number">02</span>
                 <div class="mission-item-copy">
-                    <h3>Proses lebih praktis</h3>
-                    <p>Memungkinkan pemeriksaan awal dilakukan dari foto tanpa harus memilah setiap buah secara manual satu per satu.</p>
+                    <h3>Pemeriksaan awal yang praktis</h3>
+                    <p>Memungkinkan pengguna memperoleh perkiraan kategori dari foto tanpa memilah setiap buah satu per satu.</p>
                 </div>
-            </article>
-            <article class="mission-item">
+            </li>
+            <li class="mission-item">
                 <span class="mission-number">03</span>
                 <div class="mission-item-copy">
-                    <h3>Dasar pengembangan sortasi otomatis</h3>
-                    <p>Menjadi pijakan untuk pengembangan sistem sortasi yang dapat diintegrasikan dengan proses pascapanen.</p>
+                    <h3>Landasan untuk pengembangan berikutnya</h3>
+                    <p>Menjadi pijakan untuk mengkaji integrasi klasifikasi dengan proses sortasi pascapanen.</p>
                 </div>
-            </article>
-        </div>
+            </li>
+        </ol>
     </div>
 </section>
 
 
-<!-- SECTION SPESIFIKASI & CAKUPAN: merangkum parameter penelitian dan batas sistem BananaAI. -->
+<!-- SECTION SPESIFIKASI & CAKUPAN: daftar parameter, objek, pendekatan, dan batas penelitian. -->
 <section class="scope-section" id="spesifikasi" aria-labelledby="scope-title">
     <div class="scope-inner">
-        <div class="scope-intro">
-            <p class="scope-eyebrow"><span aria-hidden="true"></span> Ruang lingkup penelitian</p>
-            <h2 id="scope-title">Spesifikasi yang menjaga penelitian tetap terarah.</h2>
-            <p>Parameter berikut menetapkan batas penelitian dan kondisi yang digunakan saat sistem dievaluasi.</p>
-            <div class="scope-subject"><span>Objek penelitian</span><strong>Buah pisang</strong></div>
-        </div>
+        <header class="scope-heading">
+            <div class="scope-heading-main">
+                <p class="scope-eyebrow"><span aria-hidden="true"></span> Spesifikasi &amp; cakupan <span class="scope-index">03 / 04</span></p>
+                <h2 id="scope-title">Batas penelitian, dijelaskan dengan terbuka.</h2>
+            </div>
+            <div class="scope-heading-aside">
+                <p>Parameter ini menjelaskan objek dan kondisi yang dicakup, agar hasil sistem dapat dibaca dalam konteks yang tepat.</p>
+                <p class="scope-subject"><span>Objek penelitian</span><strong>Buah pisang</strong></p>
+            </div>
+        </header>
 
-        <div class="scope-list" aria-label="Spesifikasi dan batasan sistem">
-            <article class="scope-row">
+        <div class="scope-register-heading" aria-hidden="true"><span>Parameter</span><span>Rincian penelitian</span></div>
+        <ol class="scope-list" aria-label="Spesifikasi dan batasan penelitian">
+            <li class="scope-row">
                 <span class="scope-number">01</span>
                 <div class="scope-row-label"><span>Keluaran</span><strong>Kategori kematangan</strong></div>
                 <p>Mentah, setengah matang, dan matang.</p>
-            </article>
-            <article class="scope-row">
+            </li>
+            <li class="scope-row">
                 <span class="scope-number">02</span>
                 <div class="scope-row-label"><span>Data</span><strong>Kumpulan citra</strong></div>
                 <p>1.521 citra untuk pelatihan, validasi, dan pengujian.</p>
-            </article>
-            <article class="scope-row">
+            </li>
+            <li class="scope-row">
                 <span class="scope-number">03</span>
                 <div class="scope-row-label"><span>Pendekatan</span><strong>RGB &amp; ANN</strong></div>
                 <p>Konsep analisis warna pada diagram; aplikasi demonstrasi menggunakan YOLOv8s-cls.</p>
-            </article>
-            <article class="scope-row">
+            </li>
+            <li class="scope-row">
                 <span class="scope-number">04</span>
                 <div class="scope-row-label"><span>Batasan</span><strong>Kamera smartphone</strong></div>
                 <p>Menggunakan kamera Redmi 9A; suhu dan kelembapan tidak menjadi variabel.</p>
-            </article>
-        </div>
+            </li>
+        </ol>
     </div>
 </section>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teknologi dan Implementasi — BananaAI</title>
+    <meta name="description" content="Perangkat dan pendekatan yang digunakan untuk mengambil serta mengklasifikasikan citra pisang.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/teknologi.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+</head>
+<body id="teknologi">
+    {% include 'navbar.html' %}
+
+    <main>
+        <!-- SECTION TEKNOLOGI: menjelaskan sumber data dan perangkat akuisisi sebagai lembar spesifikasi. -->
+        <section class="technology-section" aria-labelledby="technology-title">
+            <div class="technology-inner">
+                <div class="technology-index" aria-hidden="true">01 <span>Dasar sistem</span></div>
+                <div class="technology-content">
+                    <header class="technology-heading">
+                        <p class="technology-eyebrow">Perangkat &amp; data</p>
+                        <h1 id="technology-title">Klasifikasi dimulai dari foto yang dapat dibaca.</h1>
+                        <p>Mutu dan konsistensi citra menjadi dasar bagi sistem untuk mengenali tingkat kematangan pisang.</p>
+                    </header>
+
+                    <div class="acquisition-record">
+                        <div class="record-title">
+                            <span class="record-symbol" aria-hidden="true">01</span>
+                            <div><p>Perangkat akuisisi</p><h2>Redmi 9A</h2></div>
+                        </div>
+                        <p class="record-description">Foto dikumpulkan menggunakan kamera smartphone dengan sensor 13 MP. Pengambilan dilakukan dengan memperhatikan pencahayaan, jarak, dan sudut agar data visual antar kategori tetap konsisten.</p>
+                        <dl class="record-specs">
+                            <div><dt>Sensor kamera</dt><dd>13 MP</dd></div>
+                            <div><dt>Representasi warna</dt><dd>RGB · 3 kanal</dd></div>
+                            <div><dt>Kategori data</dt><dd>Mentah · transisi · matang</dd></div>
+                            <div><dt>Kondisi pengambilan</dt><dd>Cahaya dan sudut terkontrol</dd></div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION TECH STACK: katalog fungsi perangkat lunak, disajikan sebagai daftar teknis tanpa kartu berulang. -->
+        <section class="stack-section" aria-labelledby="stack-title">
+            <div class="stack-inner">
+                <header class="stack-heading">
+                    <div><p class="stack-kicker">02 / Perangkat lunak</p><h2 id="stack-title">Perangkat yang menyusun aplikasi.</h2></div>
+                    <p>Setiap pustaka memiliki peran berbeda, dari menerima unggahan sampai menyiapkan dan mengevaluasi model.</p>
+                </header>
+
+                <div class="stack-register">
+                    <h3 class="register-heading">Aplikasi &amp; inferensi</h3>
+                    <dl class="stack-list">
+                        <div class="stack-row"><dt>Python</dt><dd>Bahasa utama untuk logika server, pemrosesan, dan pemanggilan model.</dd><span>Runtime</span></div>
+                        <div class="stack-row"><dt>Flask</dt><dd>Melayani halaman web, menerima berkas gambar, dan mengirim hasil prediksi.</dd><span>Web</span></div>
+                        <div class="stack-row"><dt>YOLOv8 · PyTorch</dt><dd>Detektor memeriksa objek pisang; YOLOv8s-cls menentukan kategori kematangan.</dd><span>Model</span></div>
+                        <div class="stack-row"><dt>OpenCV · Pillow</dt><dd>Membaca dan menyiapkan citra serta menggambar penanda area fokus.</dd><span>Citra</span></div>
+                    </dl>
+                    <h3 class="register-heading register-support-heading">Pengolahan &amp; evaluasi</h3>
+                    <dl class="stack-list">
+                        <div class="stack-row"><dt>Albumentations</dt><dd>Menyediakan transformasi untuk variasi citra pada proses pelatihan.</dd><span>Data latih</span></div>
+                        <div class="stack-row"><dt>NumPy · Pandas</dt><dd>Mendukung operasi array dan pengelolaan data eksperimen.</dd><span>Data</span></div>
+                        <div class="stack-row"><dt>Matplotlib · Seaborn</dt><dd>Menyajikan grafik untuk membaca proses dan hasil evaluasi.</dd><span>Visualisasi</span></div>
+                        <div class="stack-row"><dt>OS · Shutil · Glob</dt><dd>Mengelola berkas, direktori, dan alur penyimpanan aplikasi.</dd><span>Sistem</span></div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION RINGKASAN IMPLEMENTASI: memisahkan deteksi, penanda visual ROI, dan evaluasi model. -->
+        <section class="implementation-section" aria-labelledby="implementation-title">
+            <div class="implementation-inner">
+                <header class="implementation-heading">
+                    <div><p class="implementation-kicker">03 / Cara kerja komponen</p><h2 id="implementation-title">Tiga fungsi, satu alur pemeriksaan.</h2></div>
+                    <p>Deteksi dan klasifikasi adalah model yang berbeda. Penanda area fokus memberi konteks visual pada gambar hasil.</p>
+                </header>
+
+                <ol class="implementation-list">
+                    <li class="implementation-step implementation-detection">
+                        <span class="implementation-number">01</span>
+                        <div class="implementation-step-copy"><p class="step-type">Deteksi objek</p><h3>Pastikan foto memuat pisang</h3><p>Model deteksi memeriksa kelas objek. Jika pisang tidak ditemukan, sistem mengembalikan keterangan bahwa foto bukan pisang.</p></div>
+                        <p class="implementation-output"><span>Keluaran</span><strong>Objek terverifikasi</strong></p>
+                    </li>
+                    <li class="implementation-step implementation-focus">
+                        <span class="implementation-number">02</span>
+                        <div class="implementation-step-copy"><p class="step-type">Penanda area</p><h3>Tunjukkan bagian tengah buah</h3><p>Aplikasi menggambar kotak fokus sebesar 40% dari kotak deteksi pada gambar. Ini penanda visual dan tidak memotong gambar sebelum klasifikasi.</p></div>
+                        <p class="implementation-output"><span>Penanda</span><strong>40% × 40%</strong></p>
+                    </li>
+                    <li class="implementation-step implementation-accuracy">
+                        <span class="implementation-number">03</span>
+                        <div class="implementation-step-copy"><p class="step-type">Klasifikasi &amp; evaluasi</p><h3>Perkirakan tingkat kematangan</h3><p>YOLOv8s-cls memilih salah satu dari tiga kelas. Akurasi pengujian yang dilaporkan sebesar 97,92%; hasil tiap foto tetap berupa prediksi model.</p></div>
+                        <p class="implementation-output"><span>Akurasi uji</span><strong>97,92%</strong></p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    {% include 'footer.html' %}
+</body>
+</html>

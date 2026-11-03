@@ -73,6 +73,16 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/cara-kerja", methods=["GET"])
+def cara_kerja():
+    return render_template("cara_kerja.html")
+
+
+@app.route("/teknologi", methods=["GET"])
+def teknologi():
+    return render_template("teknologi.html")
+
+
 @app.route("/aplikasi", methods=["GET", "POST"])
 def application():
     prediction = None

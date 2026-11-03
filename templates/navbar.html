@@ -10,8 +10,8 @@
 
         <nav class="site-nav" aria-label="Navigasi utama">
             <a class="site-nav-link" href="{{ url_for('index') }}" {% if request.endpoint == 'index' %}aria-current="page"{% endif %}>Beranda</a>
-            <span class="site-nav-link" aria-disabled="true">Cara kerja</span>
-            <span class="site-nav-link" aria-disabled="true">Teknologi</span>
+            <a class="site-nav-link" href="{{ url_for('cara_kerja') }}" {% if request.endpoint == 'cara_kerja' %}aria-current="page"{% endif %}>Cara kerja</a>
+            <a class="site-nav-link" href="{{ url_for('teknologi') }}" {% if request.endpoint == 'teknologi' %}aria-current="page"{% endif %}>Teknologi</a>
             <a class="site-nav-link" href="{{ url_for('application') }}" {% if request.endpoint == 'application' %}aria-current="page"{% endif %}>Aplikasi</a>
             <span class="site-nav-link" aria-disabled="true">Latar belakang</span>
         </nav>

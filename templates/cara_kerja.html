@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara Kerja Sistem — BananaAI</title>
+    <meta name="description" content="Kenali alur klasifikasi kematangan pisang BananaAI, dari pemeriksaan foto hingga hasil prediksi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cara_kerja.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+</head>
+<body id="cara-kerja">
+    <div class="ambient" aria-hidden="true">
+        <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+    </div>
+
+    {% include 'navbar.html' %}
+
+    <main>
+        <!-- SECTION 1 — HERO: mengenalkan alur secara ringkas dan memberi jalan langsung ke aplikasi. -->
+        <section class="how-hero" aria-labelledby="how-title">
+            <div class="how-hero-inner">
+                <div class="how-copy">
+                    <p class="how-eyebrow"><span></span> Cara kerja BananaAI <b>01 / 04</b></p>
+                    <h1 id="how-title">Satu foto untuk mengenali tahap kematangan.</h1>
+                    <p class="how-lead">BananaAI memeriksa foto pisang dan memperkirakan kategorinya: mentah, setengah matang, atau matang.</p>
+                    <div class="how-actions">
+                        <a class="how-button" href="{{ url_for('application') }}">Mulai klasifikasi <span aria-hidden="true">→</span></a>
+                        <a class="how-text-link" href="#pipeline">Lihat alur sistem <span aria-hidden="true">↓</span></a>
+                    </div>
+                    <p class="how-caption">Hasil ditampilkan sebagai kategori dan tingkat keyakinan model.</p>
+                </div>
+
+                <figure class="hero-flow">
+                    <figcaption><span>Masukan</span><span>Prediksi</span></figcaption>
+                    <div class="hero-flow-visual" aria-label="Foto pisang diteruskan ke model dan menghasilkan kategori kematangan" role="img">
+                        <div class="sample-photo" aria-hidden="true">
+                            <svg viewBox="0 0 150 110">
+                                <path class="sample-banana" d="M31 20c10 27 31 46 58 49 18 2 33-6 43-23-4 22-22 39-47 39-28 0-54-22-61-52l7-13Z"/>
+                                <path class="sample-highlight" d="M40 31c10 18 27 30 47 33"/>
+                                <path class="sample-stem" d="m27 19 8-8 5 11-8 5Z"/>
+                            </svg>
+                            <span class="photo-label">Foto pisang</span>
+                        </div>
+                        <span class="flow-arrow" aria-hidden="true">→</span>
+                        <div class="sample-result">
+                            <span class="result-overline">Kategori</span>
+                            <strong><i></i> Setengah matang</strong>
+                            <span class="result-rule"></span>
+                            <span class="result-subline">Perkiraan model</span>
+                        </div>
+                    </div>
+                    <p class="hero-flow-note">Ilustrasi alur masukan dan keluaran</p>
+                </figure>
+            </div>
+        </section>
+
+        <!-- SECTION 2 — PIPELINE: menunjukkan urutan proses yang dijalankan aplikasi demo. -->
+        <section class="pipeline-section" id="pipeline" aria-labelledby="pipeline-title">
+            <div class="pipeline-inner">
+                <header class="pipeline-heading">
+                    <p class="section-index">02 <span>Alur pemrosesan</span></p>
+                    <div>
+                        <h2 id="pipeline-title">Dari unggahan hingga hasil.</h2>
+                        <p>Empat langkah berikut merangkum apa yang terjadi saat sebuah foto dianalisis.</p>
+                    </div>
+                </header>
+
+                <ol class="pipeline-list">
+                    <li class="pipeline-step">
+                        <span class="pipeline-step-number">01</span>
+                        <span class="pipeline-step-mark mark-input" aria-hidden="true">↑</span>
+                        <h3>Foto diunggah</h3>
+                        <p>Pengguna memilih foto pisang dari perangkat untuk dikirim ke aplikasi.</p>
+                        <span class="pipeline-step-note">JPG · PNG · JPEG</span>
+                    </li>
+                    <li class="pipeline-step">
+                        <span class="pipeline-step-number">02</span>
+                        <span class="pipeline-step-mark mark-detect" aria-hidden="true">⌕</span>
+                        <h3>Pisang diperiksa</h3>
+                        <p>Model deteksi memeriksa keberadaan objek pisang sebelum klasifikasi.</p>
+                        <span class="pipeline-step-note">Deteksi objek</span>
+                    </li>
+                    <li class="pipeline-step">
+                        <span class="pipeline-step-number">03</span>
+                        <span class="pipeline-step-mark mark-classify" aria-hidden="true">◉</span>
+                        <h3>Model membuat prediksi</h3>
+                        <p>Model klasifikasi YOLOv8s-cls memperkirakan kategori dari foto.</p>
+                        <span class="pipeline-step-note">3 kategori kematangan</span>
+                    </li>
+                    <li class="pipeline-step">
+                        <span class="pipeline-step-number">04</span>
+                        <span class="pipeline-step-mark mark-output" aria-hidden="true">✓</span>
+                        <h3>Hasil ditampilkan</h3>
+                        <p>Aplikasi menampilkan label prediksi bersama tingkat keyakinan model.</p>
+                        <span class="pipeline-step-note">Label + keyakinan</span>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- SECTION 3 — ROI & MLP: menerangkan penanda area tengah dan memisahkannya dari konsep ANN penelitian. -->
+        <section class="focus-section" aria-labelledby="focus-title">
+            <div class="focus-inner">
+                <header class="focus-heading">
+                    <p class="section-index">03 <span>Area fokus &amp; konsep model</span></p>
+                    <h2 id="focus-title">Dua gambaran yang perlu dibedakan.</h2>
+                    <p>Penanda pada foto menjelaskan area perhatian. Diagram jaringan saraf di bawahnya menggambarkan konsep penelitian RGB/ANN.</p>
+                </header>
+
+                <div class="focus-content">
+                    <figure class="focus-figure">
+                        <div class="focus-photo" role="img" aria-label="Ilustrasi pisang dengan kotak deteksi dan area fokus di bagian tengah">
+                            <svg viewBox="0 0 520 230" aria-hidden="true">
+                                <path class="focus-fruit-shadow" d="M109 75c42 74 126 112 216 94 38-8 69-30 92-66-12 63-61 105-128 112-96 9-188-48-213-125l33-15Z"/>
+                                <path class="focus-fruit" d="M109 67c42 74 126 112 216 94 38-8 69-30 92-66-12 63-61 105-128 112-96 9-188-48-213-125l33-15Z"/>
+                                <path class="focus-fruit-line" d="M138 92c45 52 107 79 174 76"/>
+                                <path class="focus-stem" d="m98 69 21-22 10 23-21 12Z"/>
+                                <rect class="focus-box" x="82" y="42" width="360" height="153" rx="8"/>
+                                <rect class="focus-region" x="190" y="88" width="144" height="61" rx="5"/>
+                                <path class="focus-corner" d="M190 104V96q0-8 8-8h13M321 88h5q8 0 8 8v13M190 133v8q0 8 8 8h13M321 149h5q8 0 8-8v-8"/>
+                                <text class="focus-label" x="194" y="81">AREA TENGAH · 40%</text>
+                            </svg>
+                        </div>
+                        <figcaption><strong>Penanda area fokus</strong><span>Area tengah kotak deteksi disorot pada gambar hasil.</span></figcaption>
+                    </figure>
+
+                    <div class="focus-explanation">
+                        <div class="focus-note">
+                            <span class="focus-note-number">A</span>
+                            <div><h3>Penanda ROI pada aplikasi</h3><p>Saat objek terdeteksi, aplikasi menggambar penanda pada area tengah kotak pisang. Ini membantu memperlihatkan bagian yang menjadi fokus visual.</p></div>
+                        </div>
+                        <div class="focus-note">
+                            <span class="focus-note-number">B</span>
+                            <div><h3>Konsep RGB dan ANN</h3><p>Diagram berikut adalah gambaran penelitian tentang pemetaan kanal warna RGB melalui jaringan saraf ke kategori kematangan.</p></div>
+                        </div>
+                        <figure class="concept-diagram">
+                            <figcaption><span>Konsep penelitian</span><span>RGB → ANN → kategori</span></figcaption>
+                            <div class="concept-network" role="img" aria-label="Kanal RGB terhubung melalui jaringan saraf konseptual ke tiga kelas kematangan">
+                                <svg viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true">
+                                    <g class="concept-lines">
+                                        <path d="M34 24L190 20 M34 24L190 60 M34 24L190 100 M34 60L190 20 M34 60L190 60 M34 60L190 100 M34 96L190 20 M34 96L190 60 M34 96L190 100"/>
+                                        <path d="M205 20L370 24 M205 20L370 60 M205 20L370 96 M205 60L370 24 M205 60L370 60 M205 60L370 96 M205 100L370 24 M205 100L370 60 M205 100L370 96"/>
+                                    </g>
+                                    <g class="concept-rgb"><circle cx="34" cy="24" r="5"/><circle cx="34" cy="60" r="5"/><circle cx="34" cy="96" r="5"/></g>
+                                    <g class="concept-neurons"><circle cx="190" cy="20" r="6"/><circle cx="190" cy="60" r="6"/><circle cx="190" cy="100" r="6"/><circle cx="205" cy="20" r="6"/><circle cx="205" cy="60" r="6"/><circle cx="205" cy="100" r="6"/></g>
+                                    <g class="concept-classes"><circle cx="370" cy="24" r="5"/><circle cx="370" cy="60" r="5"/><circle cx="370" cy="96" r="5"/></g>
+                                </svg>
+                            </div>
+                        </figure>
+                        <p class="focus-disclaimer">Aplikasi demo melakukan klasifikasi dengan YOLOv8s-cls; ilustrasi ANN tidak menunjukkan arsitektur model yang sedang berjalan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 — OUTPUT KLASIFIKASI: menjelaskan tiga label yang mungkin muncul beserta petunjuk visualnya. -->
+        <section class="output-section" aria-labelledby="output-title">
+            <div class="output-inner">
+                <header class="output-heading">
+                    <div>
+                        <p class="section-index">04 <span>Hasil klasifikasi</span></p>
+                        <h2 id="output-title">Tiga kategori, satu hasil prediksi.</h2>
+                    </div>
+                    <p>Model memilih kategori dengan nilai prediksi tertinggi. Petunjuk warna berikut membantu membaca label, tetapi bukan pengukuran warna yang berdiri sendiri.</p>
+                </header>
+
+                <ol class="output-list">
+                    <li class="output-stage output-unripe">
+                        <span class="output-number">01</span>
+                        <span class="output-color" aria-hidden="true"></span>
+                        <div><h3>Mentah</h3><p>Warna hijau masih terlihat dominan.</p></div>
+                        <span class="output-short">Hijau</span>
+                    </li>
+                    <li class="output-stage output-turning">
+                        <span class="output-number">02</span>
+                        <span class="output-color" aria-hidden="true"></span>
+                        <div><h3>Setengah matang</h3><p>Warna hijau mulai bercampur dengan kuning.</p></div>
+                        <span class="output-short">Transisi</span>
+                    </li>
+                    <li class="output-stage output-ripe">
+                        <span class="output-number">03</span>
+                        <span class="output-color" aria-hidden="true"></span>
+                        <div><h3>Matang</h3><p>Warna kuning tampak lebih dominan.</p></div>
+                        <span class="output-short">Kuning</span>
+                    </li>
+                </ol>
+
+                <a class="output-cta" href="{{ url_for('application') }}">Unggah foto untuk mencoba <span aria-hidden="true">→</span></a>
+            </div>
+        </section>
+    </main>
+
+    {% include 'footer.html' %}
+</body>
+</html>

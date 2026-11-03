@@ -19,8 +19,8 @@
             <nav class="footer-navigation" aria-label="Navigasi footer">
                 <h2 class="footer-heading">Jelajahi</h2>
                 <a href="{{ url_for('index') }}">Beranda</a>
-                <span aria-disabled="true">Cara kerja</span>
-                <span aria-disabled="true">Teknologi</span>
+                <a href="{{ url_for('cara_kerja') }}">Cara kerja</a>
+                <a href="{{ url_for('teknologi') }}">Teknologi</a>
                 <a href="{{ url_for('application') }}">Aplikasi</a>
                 <span aria-disabled="true">Latar belakang</span>
             </nav>

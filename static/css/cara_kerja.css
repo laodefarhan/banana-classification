@@ -1,0 +1,193 @@
+/* ============================================================
+   BANANAAI — HALAMAN CARA KERJA
+   Desain berlapis dengan ritme berbeda untuk tiap bagian:
+   hero, urutan proses, penjelasan teknis, lalu arti hasil.
+   ============================================================ */
+
+/* SECTION 1 — HERO
+   Pengantar utama dan contoh sederhana alur foto menuju hasil prediksi. */
+.how-hero {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    align-items: center;
+    width: calc(100% + 48px);
+    min-height: calc(100vh - 76px);
+    min-height: calc(100svh - 76px);
+    margin-left: -24px;
+    padding: 62px 24px;
+    background: #F4F5F0;
+}
+
+.how-hero-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, .86fr); align-items: center; gap: clamp(50px, 9vw, 120px); width: min(100%, 1100px); margin: 0 auto; }
+.how-copy { max-width: 590px; }
+.how-eyebrow { display: flex; align-items: center; gap: 9px; margin-bottom: 19px; color: #60715F; font-size: 9px; font-weight: 750; letter-spacing: .7px; text-transform: uppercase; }
+.how-eyebrow > span { width: 7px; height: 7px; border-radius: 50%; background: #718D64; }
+.how-eyebrow b { margin-left: 5px; color: #98A195; font-size: 8px; font-weight: 600; }
+.how-copy h1 { max-width: 590px; color: #1E2A2D; font-size: clamp(40px, 5vw, 59px); font-weight: 650; letter-spacing: -2.5px; line-height: 1.04; }
+.how-lead { max-width: 500px; margin-top: 19px; color: #5F6C6D; font-size: 17px; line-height: 1.8; }
+.how-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 26px; }
+.how-button { display: inline-flex; min-height: 46px; align-items: center; gap: 13px; padding: 0 16px; border: 1px solid #D0A34D; border-radius: 6px; background: #E8BE63; color: #302819; font-size: 11px; font-weight: 700; text-decoration: none; transition: background .18s ease; }
+.how-button:hover { background: #DEB451; }
+.how-button span { font-size: 15px; }
+.how-text-link { display: inline-flex; align-items: center; gap: 7px; color: #526457; font-size: 10px; font-weight: 700; text-decoration: none; }
+.how-text-link:hover { color: #263B32; }
+.how-button:focus-visible, .how-text-link:focus-visible, .output-cta:focus-visible { outline: 2px solid #416A43; outline-offset: 4px; }
+.how-caption { margin-top: 23px; color: #849087; font-size: 12px; }
+
+.hero-flow { width: 100%; max-width: 455px; justify-self: end; margin: 0; padding: 18px 0 0; border-top: 1px solid #D4DAD1; }
+.hero-flow figcaption { display: flex; justify-content: space-between; color: #7A867D; font-size: 8px; font-weight: 700; letter-spacing: .55px; text-transform: uppercase; }
+.hero-flow-visual { display: grid; grid-template-columns: minmax(0, 1fr) 30px minmax(0, .9fr); align-items: center; gap: 12px; margin-top: 15px; }
+.sample-photo { position: relative; display: grid; min-height: 205px; place-items: center; overflow: hidden; border: 1px solid #DDE2DA; background: #EBEEE8; }
+.sample-photo::before, .sample-photo::after { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(90,110,87,.08); content: ""; }
+.sample-photo::before { left: 33%; }.sample-photo::after { left: 66%; }
+.sample-photo svg { position: relative; z-index: 1; width: 88%; max-height: 150px; }
+.sample-banana { fill: #C9B553; }.sample-highlight { fill: none; stroke: rgba(255,255,255,.55); stroke-linecap: round; stroke-width: 3; }.sample-stem { fill: #77713D; }
+.photo-label { position: absolute; bottom: 11px; left: 12px; color: #647067; font-size: 8px; font-weight: 600; }
+.flow-arrow { color: #758474; font-size: 17px; text-align: center; }
+.sample-result { display: grid; align-content: center; gap: 11px; min-height: 150px; padding: 13px 12px; border-left: 2px solid #90A183; background: rgba(255,255,255,.6); }
+.result-overline, .result-subline { color: #849087; font-size: 8px; }
+.sample-result strong { display: flex; align-items: center; gap: 7px; color: #34433A; font-size: 11px; line-height: 1.4; }
+.sample-result strong i { width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background: #B8A84E; }
+.result-rule { width: 100%; height: 3px; background: linear-gradient(90deg, #749568 0 38%, #C6B553 38% 78%, #D9DCD2 78%); }
+.hero-flow-note { margin-top: 10px; color: #98A097; font-size: 8px; text-align: right; }
+
+/* SECTION 2 — PIPELINE
+   Urutan kerja ditampilkan sebagai langkah yang tersambung, bukan kumpulan kartu. */
+.pipeline-section { position: relative; z-index: 1; display: grid; align-items: center; width: calc(100% + 48px); min-height: 100vh; min-height: 100svh; margin-left: -24px; padding: 76px 24px; background: #fff; }
+.pipeline-inner { width: min(100%, 1100px); margin: 0 auto; }
+.pipeline-heading { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 35px; align-items: start; margin-bottom: 52px; }
+.section-index { display: flex; align-items: center; gap: 10px; padding-top: 8px; color: #A27B3C; font-size: 10px; font-weight: 750; letter-spacing: .5px; }
+.section-index span { color: #77847C; font-size: 9px; font-weight: 600; letter-spacing: .2px; }
+.pipeline-heading h2, .output-heading h2 { color: #202C2F; font-size: clamp(30px, 3.7vw, 43px); font-weight: 650; letter-spacing: -1.7px; line-height: 1.1; }
+.pipeline-heading > div > p:last-child { max-width: 540px; margin-top: 11px; color: #6A7577; font-size: 14px; line-height: 1.7; }
+.pipeline-list { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; }
+.pipeline-list::before { position: absolute; top: 17px; right: 9%; left: 9%; height: 1px; background: #DDE2DC; content: ""; }
+.pipeline-step { position: relative; display: flex; min-height: 270px; flex-direction: column; align-items: flex-start; padding: 0 24px 0 0; }
+.pipeline-step + .pipeline-step { padding-left: 22px; border-left: 1px solid #E4E8E3; }
+.pipeline-step-number { position: relative; z-index: 1; display: grid; width: 35px; height: 35px; place-items: center; border: 1px solid #DDE2DC; border-radius: 50%; background: #fff; color: #56685A; font-size: 9px; font-weight: 700; }
+.pipeline-step-mark { display: grid; width: 31px; height: 31px; place-items: center; margin-top: 21px; border-radius: 8px; font-size: 16px; font-weight: 700; }
+.mark-input { background: #F4EFD8; color: #A17E2D; }.mark-detect { background: #EAF0E5; color: #648057; }.mark-classify { background: #F2ECDD; color: #A27A3A; }.mark-output { background: #E6F0E9; color: #527C61; }
+.pipeline-step h3 { margin-top: 14px; color: #293638; font-size: 14px; font-weight: 700; letter-spacing: -.2px; }
+.pipeline-step > p { max-width: 240px; margin-top: 8px; color: #6B7777; font-size: 12px; line-height: 1.7; }
+.pipeline-step-note { margin-top: auto; padding-top: 17px; color: #879189; font-size: 8px; font-weight: 650; }
+
+/* SECTION 3 — ROI & MLP
+   Menjelaskan penanda ROI pada hasil deteksi dan diagram ANN sebagai konsep penelitian. */
+.focus-section { position: relative; z-index: 1; display: grid; align-items: center; width: calc(100% + 48px); min-height: 100vh; min-height: 100svh; margin-left: -24px; padding: 74px 24px; background: #263B32; color: #F5F6F2; }
+.focus-inner { width: min(100%, 1100px); margin: 0 auto; }
+.focus-heading { display: grid; grid-template-columns: 170px minmax(0, 1fr) minmax(240px, .7fr); align-items: end; gap: 28px; margin-bottom: 37px; }
+.focus-heading .section-index { align-self: start; color: #E4BD70; }
+.focus-heading .section-index span { color: #C6D1C9; }
+.focus-heading h2 { color: #F6F5EF; font-size: clamp(28px, 3.3vw, 39px); font-weight: 650; letter-spacing: -1.3px; line-height: 1.1; }
+.focus-heading > p:last-child { color: #C8D2CA; font-size: 14px; line-height: 1.75; }
+.focus-content { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: clamp(30px, 5vw, 65px); align-items: center; }
+.focus-figure { min-width: 0; margin: 0; }
+.focus-photo { display: grid; min-height: 290px; place-items: center; overflow: hidden; border: 1px solid rgba(235,242,235,.2); background: #30473C; }
+.focus-photo svg { width: 100%; height: auto; max-height: 280px; }
+.focus-fruit-shadow { fill: #788B4C; opacity: .35; }.focus-fruit { fill: #D3B84D; }.focus-fruit-line { fill: none; stroke: rgba(255,255,255,.5); stroke-linecap: round; stroke-width: 3; }.focus-stem { fill: #9F8E43; }
+.focus-box { fill: none; stroke: #E4E9D7; stroke-dasharray: 5 5; stroke-width: 1.2; }.focus-region { fill: rgba(224,190,87,.12); stroke: #E9C95C; stroke-dasharray: 4 3; stroke-width: 1.2; }.focus-corner { fill: none; stroke: #E9C95C; stroke-linecap: square; stroke-width: 2.5; }.focus-label { fill: #F4D66E; font-family: Inter, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: .7px; }
+.focus-figure figcaption { display: flex; justify-content: space-between; gap: 15px; padding-top: 12px; color: #D7E0D8; font-size: 12px; }.focus-figure figcaption span { color: #AEBDB1; text-align: right; }
+.focus-explanation { min-width: 0; }
+.focus-note { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; padding: 15px 0; border-bottom: 1px solid rgba(235,242,235,.18); }
+.focus-note:first-child { border-top: 1px solid rgba(235,242,235,.18); }
+.focus-note-number { color: #E5BD6D; font-size: 9px; font-weight: 750; }
+.focus-note h3 { color: #F1F3EF; font-size: 11px; font-weight: 700; }
+.focus-note p { margin-top: 5px; color: #C0CDC3; font-size: 12px; line-height: 1.65; }
+.concept-diagram { margin: 18px 0 0; padding: 13px 14px 10px; border: 1px solid rgba(235,242,235,.17); background: rgba(255,255,255,.035); }
+.concept-diagram figcaption { display: flex; justify-content: space-between; gap: 10px; color: #E4EADF; font-size: 8px; font-weight: 650; }
+.concept-diagram figcaption span:last-child { color: #B4C2B7; font-weight: 500; }
+.concept-network { height: 88px; margin-top: 5px; }
+.concept-network svg { width: 100%; height: 100%; }
+.concept-lines path { fill: none; stroke: rgba(220,230,220,.35); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.concept-rgb circle { fill: #8EB58E; stroke: #263B32; stroke-width: 2; vector-effect: non-scaling-stroke; }.concept-neurons circle { fill: #E6C36F; stroke: #263B32; stroke-width: 2; vector-effect: non-scaling-stroke; }.concept-classes circle { fill: #D9E2D3; stroke: #263B32; stroke-width: 2; vector-effect: non-scaling-stroke; }
+.focus-disclaimer { margin-top: 10px; color: #AEBDB1; font-size: 12px; line-height: 1.6; }
+
+/* SECTION 4 — OUTPUT KLASIFIKASI
+   Petunjuk visual kategori disusun seperti spektrum berurutan, dengan aksi mencoba di akhir. */
+.output-section { position: relative; z-index: 1; display: grid; align-items: center; width: calc(100% + 48px); min-height: 100vh; min-height: 100svh; margin-left: -24px; padding: 76px 24px; background: #F8F7F2; }
+.output-inner { width: min(100%, 1080px); margin: 0 auto; }
+.output-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, .7fr); align-items: end; gap: 45px; margin-bottom: 39px; }
+.output-heading .section-index { margin-bottom: 15px; }
+.output-heading > p { max-width: 390px; justify-self: end; color: #66716E; font-size: 14px; line-height: 1.75; }
+.output-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; padding: 0; border-top: 1px solid #D7DDD5; border-bottom: 1px solid #D7DDD5; list-style: none; }
+.output-stage { display: grid; grid-template-columns: 28px 14px minmax(0, 1fr); align-content: start; align-items: center; gap: 12px; min-height: 190px; padding: 22px 22px 23px 0; }
+.output-stage + .output-stage { padding-left: 22px; border-left: 1px solid #D7DDD5; }
+.output-number { align-self: start; padding-top: 3px; color: #A0A69B; font-size: 9px; font-weight: 700; }
+.output-color { width: 13px; height: 13px; border-radius: 50%; background: #648D61; box-shadow: 0 0 0 4px #E5EDE2; }
+.output-turning .output-color { background: #B6A544; box-shadow: 0 0 0 4px #F1EDD9; }.output-ripe .output-color { background: #D9B34E; box-shadow: 0 0 0 4px #F4ECD6; }
+.output-stage > div { grid-column: 2 / -1; }
+.output-stage h3 { color: #2C3935; font-size: 16px; font-weight: 700; letter-spacing: -.3px; }
+.output-stage p { max-width: 230px; margin-top: 8px; color: #6C7772; font-size: 12px; line-height: 1.7; }
+.output-short { grid-column: 2 / -1; margin-top: 14px; color: #78867B; font-size: 8px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
+.output-unripe .output-short { color: #5D815D; }.output-turning .output-short { color: #918236; }.output-ripe .output-short { color: #A37D34; }
+.output-cta { display: inline-flex; align-items: center; gap: 12px; margin-top: 23px; color: #4E684D; font-size: 10px; font-weight: 700; text-decoration: none; }
+.output-cta span { font-size: 15px; transition: transform .18s ease; }
+.output-cta:hover span { transform: translateX(3px); }
+
+/* RESPONSIVE — mengubah urutan/grid untuk tablet dan ponsel tanpa mengecilkan teks berlebihan. */
+@media (max-width: 980px) {
+    .how-hero-inner { grid-template-columns: minmax(0, 1fr) minmax(310px, .9fr); gap: 38px; }
+    .how-copy h1 { font-size: clamp(37px, 5vw, 48px); }
+    .pipeline-heading { grid-template-columns: 135px minmax(0, 1fr); }
+    .pipeline-step { padding-right: 15px; }
+    .pipeline-step + .pipeline-step { padding-left: 15px; }
+    .focus-heading { grid-template-columns: 140px minmax(0, 1fr); }
+    .focus-heading > p:last-child { grid-column: 2; max-width: 510px; }
+}
+
+@media (max-width: 760px) {
+    .how-hero, .pipeline-section, .focus-section, .output-section { width: calc(100% + 28px); margin-left: -14px; }
+    .how-hero { min-height: auto; padding: 55px 24px 50px; }
+    .how-hero-inner { grid-template-columns: 1fr; gap: 38px; width: min(100%, 570px); }
+    .how-copy h1 { max-width: 540px; font-size: clamp(38px, 8vw, 52px); }
+    .hero-flow { max-width: none; justify-self: stretch; }
+    .pipeline-section, .focus-section, .output-section { min-height: auto; padding: 58px 24px; }
+    .pipeline-heading { grid-template-columns: 1fr; gap: 14px; margin-bottom: 35px; }
+    .pipeline-heading .section-index { padding-top: 0; }
+    .pipeline-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .pipeline-list::before { display: none; }
+    .pipeline-step { min-height: 225px; padding: 20px 18px 18px 0; border-top: 1px solid #E4E8E3; }
+    .pipeline-step + .pipeline-step { padding-left: 18px; border-left: 1px solid #E4E8E3; }
+    .pipeline-step:nth-child(odd) { border-left: 0; }
+    .pipeline-step-note { margin-top: 18px; }
+    .focus-heading { grid-template-columns: 1fr; gap: 14px; margin-bottom: 27px; }
+    .focus-heading .section-index, .focus-heading > p:last-child { grid-column: auto; }
+    .focus-content { grid-template-columns: 1fr; gap: 28px; }
+    .focus-photo { min-height: 250px; }
+    .focus-figure figcaption { flex-direction: column; gap: 4px; }
+    .focus-figure figcaption span { text-align: left; }
+    .output-heading { grid-template-columns: 1fr; gap: 14px; margin-bottom: 27px; }
+    .output-heading > p { justify-self: start; }
+}
+
+@media (max-width: 520px) {
+    .how-hero { padding: 44px 20px; }
+    .how-copy h1 { font-size: 37px; letter-spacing: -1.5px; }
+    .how-lead { font-size: 16px; }
+    .how-actions { align-items: flex-start; flex-direction: column; gap: 16px; }
+    .hero-flow-visual { grid-template-columns: minmax(0, 1fr) 20px minmax(0, .9fr); gap: 7px; }
+    .sample-photo { min-height: 160px; }
+    .sample-result { min-height: 125px; padding: 10px 8px; }
+    .sample-result strong { font-size: 9px; }
+    .pipeline-section, .focus-section, .output-section { padding: 48px 20px; }
+    .pipeline-heading h2, .output-heading h2 { font-size: 32px; letter-spacing: -1.2px; }
+    .pipeline-list { grid-template-columns: 1fr; }
+    .pipeline-step, .pipeline-step + .pipeline-step { display: grid; grid-template-columns: 35px minmax(0, 1fr); min-height: 0; padding: 17px 0; border-left: 0; }
+    .pipeline-step-number { grid-row: 1 / span 3; }
+    .pipeline-step-mark { grid-column: 2; margin-top: 0; }
+    .pipeline-step h3 { grid-column: 2; margin-top: 9px; }
+    .pipeline-step > p, .pipeline-step-note { grid-column: 2; max-width: 440px; }
+    .pipeline-step > p { margin-top: 5px; }
+    .pipeline-step-note { margin-top: 9px; padding-top: 0; }
+    .focus-heading h2 { font-size: 31px; letter-spacing: -1.1px; }
+    .focus-photo { min-height: 190px; }
+    .concept-diagram { padding: 11px 9px 8px; }
+    .concept-diagram figcaption { font-size: 7px; }
+    .output-list { grid-template-columns: 1fr; }
+    .output-stage, .output-stage + .output-stage { grid-template-columns: 28px 14px minmax(0, 1fr); min-height: 0; padding: 18px 0; border-left: 0; }
+    .output-stage + .output-stage { border-top: 1px solid #D7DDD5; }
+    .output-stage > div { grid-column: 3; }
+    .output-stage p { max-width: 400px; }
+    .output-short { grid-column: 3; margin-top: 2px; }
+}
